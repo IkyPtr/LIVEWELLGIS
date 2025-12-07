@@ -1,0 +1,1221 @@
+{
+    "type": "FeatureCollection",
+    "features": [
+        {
+            "type": "Feature",
+            "id": 0,
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    101.3831995,
+                    0.61081790000000002
+                ]
+            },
+            "properties": {
+                "FID": 0,
+                "Timestamp": 1736553600000,
+                "Langitude": 0.61081790000000002,
+                "longitude": 101.3831995,
+                "keterangan": "Pabrik",
+                "risk_cemar": "Tinggi"
+            }
+        },
+        {
+            "type": "Feature",
+            "id": 1,
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    101.4420532,
+                    0.55978550000000005
+                ]
+            },
+            "properties": {
+                "FID": 1,
+                "Timestamp": 1739232000000,
+                "Langitude": 0.55978550000000005,
+                "longitude": 101.4420532,
+                "keterangan": "TPA",
+                "risk_cemar": "Tinggi"
+            }
+        },
+        {
+            "type": "Feature",
+            "id": 2,
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    101.44080630000001,
+                    0.56236969999999997
+                ]
+            },
+            "properties": {
+                "FID": 2,
+                "Timestamp": 1739232000000,
+                "Langitude": 0.56236969999999997,
+                "longitude": 101.44080630000001,
+                "keterangan": "TPA",
+                "risk_cemar": "Tinggi"
+            }
+        },
+        {
+            "type": "Feature",
+            "id": 3,
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    101.45891760000001,
+                    0.56389920000000004
+                ]
+            },
+            "properties": {
+                "FID": 3,
+                "Timestamp": 1739232000000,
+                "Langitude": 0.56389920000000004,
+                "longitude": 101.45891760000001,
+                "keterangan": "TPA",
+                "risk_cemar": "Tinggi"
+            }
+        },
+        {
+            "type": "Feature",
+            "id": 4,
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    101.425566,
+                    0.56529859999999998
+                ]
+            },
+            "properties": {
+                "FID": 4,
+                "Timestamp": 1739232000000,
+                "Langitude": 0.56529859999999998,
+                "longitude": 101.425566,
+                "keterangan": "TPA",
+                "risk_cemar": "Tinggi"
+            }
+        },
+        {
+            "type": "Feature",
+            "id": 5,
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    101.4268538,
+                    0.58125559999999998
+                ]
+            },
+            "properties": {
+                "FID": 5,
+                "Timestamp": 1739232000000,
+                "Langitude": 0.58125559999999998,
+                "longitude": 101.4268538,
+                "keterangan": "TPA",
+                "risk_cemar": "Tinggi"
+            }
+        },
+        {
+            "type": "Feature",
+            "id": 6,
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    101.47946399999999,
+                    0.56491029999999998
+                ]
+            },
+            "properties": {
+                "FID": 6,
+                "Timestamp": 1739232000000,
+                "Langitude": 0.56491029999999998,
+                "longitude": 101.47946399999999,
+                "keterangan": "Limbah Komersial",
+                "risk_cemar": "Sedang"
+            }
+        },
+        {
+            "type": "Feature",
+            "id": 7,
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    101.4749455,
+                    0.5670868
+                ]
+            },
+            "properties": {
+                "FID": 7,
+                "Timestamp": 1739232000000,
+                "Langitude": 0.5670868,
+                "longitude": 101.4749455,
+                "keterangan": "Limbah Komersial",
+                "risk_cemar": "Sedang"
+            }
+        },
+        {
+            "type": "Feature",
+            "id": 8,
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    101.4702358,
+                    0.56743690000000002
+                ]
+            },
+            "properties": {
+                "FID": 8,
+                "Timestamp": 1739232000000,
+                "Langitude": 0.56743690000000002,
+                "longitude": 101.4702358,
+                "keterangan": "Limbah Komersial",
+                "risk_cemar": "Sedang"
+            }
+        },
+        {
+            "type": "Feature",
+            "id": 9,
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    101.4703961,
+                    0.56792969999999998
+                ]
+            },
+            "properties": {
+                "FID": 9,
+                "Timestamp": 1739232000000,
+                "Langitude": 0.56792969999999998,
+                "longitude": 101.4703961,
+                "keterangan": "Limbah Komersial",
+                "risk_cemar": "Sedang"
+            }
+        },
+        {
+            "type": "Feature",
+            "id": 10,
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    101.4696246,
+                    0.56805709999999998
+                ]
+            },
+            "properties": {
+                "FID": 10,
+                "Timestamp": 1739232000000,
+                "Langitude": 0.56805709999999998,
+                "longitude": 101.4696246,
+                "keterangan": "Limbah Komersial",
+                "risk_cemar": "Sedang"
+            }
+        },
+        {
+            "type": "Feature",
+            "id": 11,
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    101.4642267,
+                    0.56967040000000002
+                ]
+            },
+            "properties": {
+                "FID": 11,
+                "Timestamp": 1739232000000,
+                "Langitude": 0.56967040000000002,
+                "longitude": 101.4642267,
+                "keterangan": "Limbah Komersial",
+                "risk_cemar": "Sedang"
+            }
+        },
+        {
+            "type": "Feature",
+            "id": 12,
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    101.4619653,
+                    0.56781230000000005
+                ]
+            },
+            "properties": {
+                "FID": 12,
+                "Timestamp": 1739232000000,
+                "Langitude": 0.56781230000000005,
+                "longitude": 101.4619653,
+                "keterangan": "Limbah Komersial",
+                "risk_cemar": "Sedang"
+            }
+        },
+        {
+            "type": "Feature",
+            "id": 13,
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    101.4584583,
+                    0.5665578
+                ]
+            },
+            "properties": {
+                "FID": 13,
+                "Timestamp": 1739232000000,
+                "Langitude": 0.5665578,
+                "longitude": 101.4584583,
+                "keterangan": "Limbah Komersial",
+                "risk_cemar": "Sedang"
+            }
+        },
+        {
+            "type": "Feature",
+            "id": 14,
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    101.4568204,
+                    0.56657959999999996
+                ]
+            },
+            "properties": {
+                "FID": 14,
+                "Timestamp": 1739232000000,
+                "Langitude": 0.56657959999999996,
+                "longitude": 101.4568204,
+                "keterangan": "Limbah Komersial",
+                "risk_cemar": "Sedang"
+            }
+        },
+        {
+            "type": "Feature",
+            "id": 15,
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    101.45547430000001,
+                    0.57077029999999995
+                ]
+            },
+            "properties": {
+                "FID": 15,
+                "Timestamp": 1739232000000,
+                "Langitude": 0.57077029999999995,
+                "longitude": 101.45547430000001,
+                "keterangan": "Limbah Komersial",
+                "risk_cemar": "Sedang"
+            }
+        },
+        {
+            "type": "Feature",
+            "id": 16,
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    101.4545768,
+                    0.56842619999999999
+                ]
+            },
+            "properties": {
+                "FID": 16,
+                "Timestamp": 1739232000000,
+                "Langitude": 0.56842619999999999,
+                "longitude": 101.4545768,
+                "keterangan": "Limbah Komersial",
+                "risk_cemar": "Sedang"
+            }
+        },
+        {
+            "type": "Feature",
+            "id": 17,
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    101.4476148,
+                    0.56046110000000005
+                ]
+            },
+            "properties": {
+                "FID": 17,
+                "Timestamp": 1739232000000,
+                "Langitude": 0.56046110000000005,
+                "longitude": 101.4476148,
+                "keterangan": "Limbah Komersial",
+                "risk_cemar": "Sedang"
+            }
+        },
+        {
+            "type": "Feature",
+            "id": 18,
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    101.4417847,
+                    0.56118889999999999
+                ]
+            },
+            "properties": {
+                "FID": 18,
+                "Timestamp": 1739232000000,
+                "Langitude": 0.56118889999999999,
+                "longitude": 101.4417847,
+                "keterangan": "Limbah Komersial",
+                "risk_cemar": "Sedang"
+            }
+        },
+        {
+            "type": "Feature",
+            "id": 19,
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    101.4417169,
+                    0.56086309999999995
+                ]
+            },
+            "properties": {
+                "FID": 19,
+                "Timestamp": 1739232000000,
+                "Langitude": 0.56086309999999995,
+                "longitude": 101.4417169,
+                "keterangan": "Limbah Komersial",
+                "risk_cemar": "Sedang"
+            }
+        },
+        {
+            "type": "Feature",
+            "id": 20,
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    101.4378244,
+                    0.54620749999999996
+                ]
+            },
+            "properties": {
+                "FID": 20,
+                "Timestamp": 1739232000000,
+                "Langitude": 0.54620749999999996,
+                "longitude": 101.4378244,
+                "keterangan": "Limbah Komersial",
+                "risk_cemar": "Sedang"
+            }
+        },
+        {
+            "type": "Feature",
+            "id": 21,
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    101.42491990000001,
+                    0.56398130000000002
+                ]
+            },
+            "properties": {
+                "FID": 21,
+                "Timestamp": 1739232000000,
+                "Langitude": 0.56398130000000002,
+                "longitude": 101.42491990000001,
+                "keterangan": "Limbah Komersial",
+                "risk_cemar": "Sedang"
+            }
+        },
+        {
+            "type": "Feature",
+            "id": 22,
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    101.4195381,
+                    0.57291769999999997
+                ]
+            },
+            "properties": {
+                "FID": 22,
+                "Timestamp": 1739232000000,
+                "Langitude": 0.57291769999999997,
+                "longitude": 101.4195381,
+                "keterangan": "Limbah Komersial",
+                "risk_cemar": "Sedang"
+            }
+        },
+        {
+            "type": "Feature",
+            "id": 23,
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    101.4031622,
+                    0.58032189999999995
+                ]
+            },
+            "properties": {
+                "FID": 23,
+                "Timestamp": 1739232000000,
+                "Langitude": 0.58032189999999995,
+                "longitude": 101.4031622,
+                "keterangan": "Limbah Komersial",
+                "risk_cemar": "Sedang"
+            }
+        },
+        {
+            "type": "Feature",
+            "id": 24,
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    101.4735936,
+                    0.56538739999999998
+                ]
+            },
+            "properties": {
+                "FID": 24,
+                "Timestamp": 1739232000000,
+                "Langitude": 0.56538739999999998,
+                "longitude": 101.4735936,
+                "keterangan": "Limbah Komersial",
+                "risk_cemar": "Sedang"
+            }
+        },
+        {
+            "type": "Feature",
+            "id": 25,
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    101.4608072,
+                    0.57586700000000002
+                ]
+            },
+            "properties": {
+                "FID": 25,
+                "Timestamp": 1739232000000,
+                "Langitude": 0.57586700000000002,
+                "longitude": 101.4608072,
+                "keterangan": "Limbah Komersial",
+                "risk_cemar": "Sedang"
+            }
+        },
+        {
+            "type": "Feature",
+            "id": 26,
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    101.45958280000001,
+                    0.56686420000000004
+                ]
+            },
+            "properties": {
+                "FID": 26,
+                "Timestamp": 1739232000000,
+                "Langitude": 0.56686420000000004,
+                "longitude": 101.45958280000001,
+                "keterangan": "Limbah Komersial",
+                "risk_cemar": "Sedang"
+            }
+        },
+        {
+            "type": "Feature",
+            "id": 27,
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    101.4502081,
+                    0.56187589999999998
+                ]
+            },
+            "properties": {
+                "FID": 27,
+                "Timestamp": 1739232000000,
+                "Langitude": 0.56187589999999998,
+                "longitude": 101.4502081,
+                "keterangan": "Limbah Komersial",
+                "risk_cemar": "Sedang"
+            }
+        },
+        {
+            "type": "Feature",
+            "id": 28,
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    101.4477073,
+                    0.56016670000000002
+                ]
+            },
+            "properties": {
+                "FID": 28,
+                "Timestamp": 1739232000000,
+                "Langitude": 0.56016670000000002,
+                "longitude": 101.4477073,
+                "keterangan": "Limbah Komersial",
+                "risk_cemar": "Sedang"
+            }
+        },
+        {
+            "type": "Feature",
+            "id": 29,
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    101.445289,
+                    0.56034879999999998
+                ]
+            },
+            "properties": {
+                "FID": 29,
+                "Timestamp": 1739232000000,
+                "Langitude": 0.56034879999999998,
+                "longitude": 101.445289,
+                "keterangan": "Limbah Komersial",
+                "risk_cemar": "Sedang"
+            }
+        },
+        {
+            "type": "Feature",
+            "id": 30,
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    101.44179200000001,
+                    0.56083490000000003
+                ]
+            },
+            "properties": {
+                "FID": 30,
+                "Timestamp": 1739232000000,
+                "Langitude": 0.56083490000000003,
+                "longitude": 101.44179200000001,
+                "keterangan": "Limbah Komersial",
+                "risk_cemar": "Sedang"
+            }
+        },
+        {
+            "type": "Feature",
+            "id": 31,
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    101.427286,
+                    0.56300139999999999
+                ]
+            },
+            "properties": {
+                "FID": 31,
+                "Timestamp": 1739232000000,
+                "Langitude": 0.56300139999999999,
+                "longitude": 101.427286,
+                "keterangan": "Limbah Komersial",
+                "risk_cemar": "Sedang"
+            }
+        },
+        {
+            "type": "Feature",
+            "id": 32,
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    101.4212775,
+                    0.56372849999999997
+                ]
+            },
+            "properties": {
+                "FID": 32,
+                "Timestamp": 1739232000000,
+                "Langitude": 0.56372849999999997,
+                "longitude": 101.4212775,
+                "keterangan": "Limbah Komersial",
+                "risk_cemar": "Sedang"
+            }
+        },
+        {
+            "type": "Feature",
+            "id": 33,
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    101.4362684,
+                    0.55097790000000002
+                ]
+            },
+            "properties": {
+                "FID": 33,
+                "Timestamp": 1739232000000,
+                "Langitude": 0.55097790000000002,
+                "longitude": 101.4362684,
+                "keterangan": "Limbah Komersial",
+                "risk_cemar": "Sedang"
+            }
+        },
+        {
+            "type": "Feature",
+            "id": 34,
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    101.43647660000001,
+                    0.55014879999999999
+                ]
+            },
+            "properties": {
+                "FID": 34,
+                "Timestamp": 1739232000000,
+                "Langitude": 0.55014879999999999,
+                "longitude": 101.43647660000001,
+                "keterangan": "Limbah Komersial",
+                "risk_cemar": "Sedang"
+            }
+        },
+        {
+            "type": "Feature",
+            "id": 35,
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    101.4489421,
+                    0.56410740000000004
+                ]
+            },
+            "properties": {
+                "FID": 35,
+                "Timestamp": 1739232000000,
+                "Langitude": 0.56410740000000004,
+                "longitude": 101.4489421,
+                "keterangan": "Limbah Komersial",
+                "risk_cemar": "Sedang"
+            }
+        },
+        {
+            "type": "Feature",
+            "id": 36,
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    101.44902260000001,
+                    0.56435179999999996
+                ]
+            },
+            "properties": {
+                "FID": 36,
+                "Timestamp": 1739232000000,
+                "Langitude": 0.56435179999999996,
+                "longitude": 101.44902260000001,
+                "keterangan": "Limbah Komersial",
+                "risk_cemar": "Sedang"
+            }
+        },
+        {
+            "type": "Feature",
+            "id": 37,
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    101.4485395,
+                    0.56571130000000003
+                ]
+            },
+            "properties": {
+                "FID": 37,
+                "Timestamp": 1739232000000,
+                "Langitude": 0.56571130000000003,
+                "longitude": 101.4485395,
+                "keterangan": "Limbah Komersial",
+                "risk_cemar": "Sedang"
+            }
+        },
+        {
+            "type": "Feature",
+            "id": 38,
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    101.4326135,
+                    0.56905280000000003
+                ]
+            },
+            "properties": {
+                "FID": 38,
+                "Timestamp": 1739232000000,
+                "Langitude": 0.56905280000000003,
+                "longitude": 101.4326135,
+                "keterangan": "Limbah Komersial",
+                "risk_cemar": "Sedang"
+            }
+        },
+        {
+            "type": "Feature",
+            "id": 39,
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    101.4739242,
+                    0.56782840000000001
+                ]
+            },
+            "properties": {
+                "FID": 39,
+                "Timestamp": 1739232000000,
+                "Langitude": 0.56782840000000001,
+                "longitude": 101.4739242,
+                "keterangan": "Pabrik",
+                "risk_cemar": "Tinggi"
+            }
+        },
+        {
+            "type": "Feature",
+            "id": 40,
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    101.46274510000001,
+                    0.5699379
+                ]
+            },
+            "properties": {
+                "FID": 40,
+                "Timestamp": 1739232000000,
+                "Langitude": 0.5699379,
+                "longitude": 101.46274510000001,
+                "keterangan": "Pabrik",
+                "risk_cemar": "Tinggi"
+            }
+        },
+        {
+            "type": "Feature",
+            "id": 41,
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    101.4869903,
+                    0.65064829999999996
+                ]
+            },
+            "properties": {
+                "FID": 41,
+                "Timestamp": 1739232000000,
+                "Langitude": 0.65064829999999996,
+                "longitude": 101.4869903,
+                "keterangan": "Pabrik",
+                "risk_cemar": "Tinggi"
+            }
+        },
+        {
+            "type": "Feature",
+            "id": 42,
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    101.51788759999999,
+                    0.56942190000000004
+                ]
+            },
+            "properties": {
+                "FID": 42,
+                "Timestamp": 1739232000000,
+                "Langitude": 0.56942190000000004,
+                "longitude": 101.51788759999999,
+                "keterangan": "Pabrik",
+                "risk_cemar": "Tinggi"
+            }
+        },
+        {
+            "type": "Feature",
+            "id": 43,
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    101.45805900000001,
+                    0.55663039999999997
+                ]
+            },
+            "properties": {
+                "FID": 43,
+                "Timestamp": 1739232000000,
+                "Langitude": 0.55663039999999997,
+                "longitude": 101.45805900000001,
+                "keterangan": "Pabrik",
+                "risk_cemar": "Tinggi"
+            }
+        },
+        {
+            "type": "Feature",
+            "id": 44,
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    101.45323999999999,
+                    0.56328029999999996
+                ]
+            },
+            "properties": {
+                "FID": 44,
+                "Timestamp": 1739232000000,
+                "Langitude": 0.56328029999999996,
+                "longitude": 101.45323999999999,
+                "keterangan": "Pabrik",
+                "risk_cemar": "Tinggi"
+            }
+        },
+        {
+            "type": "Feature",
+            "id": 45,
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    101.4508981,
+                    0.5678626
+                ]
+            },
+            "properties": {
+                "FID": 45,
+                "Timestamp": 1739232000000,
+                "Langitude": 0.5678626,
+                "longitude": 101.4508981,
+                "keterangan": "Pabrik",
+                "risk_cemar": "Tinggi"
+            }
+        },
+        {
+            "type": "Feature",
+            "id": 46,
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    101.44200530000001,
+                    0.56174880000000005
+                ]
+            },
+            "properties": {
+                "FID": 46,
+                "Timestamp": 1739232000000,
+                "Langitude": 0.56174880000000005,
+                "longitude": 101.44200530000001,
+                "keterangan": "Pabrik",
+                "risk_cemar": "Tinggi"
+            }
+        },
+        {
+            "type": "Feature",
+            "id": 47,
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    101.45137320000001,
+                    0.53224890000000002
+                ]
+            },
+            "properties": {
+                "FID": 47,
+                "Timestamp": 1739232000000,
+                "Langitude": 0.53224890000000002,
+                "longitude": 101.45137320000001,
+                "keterangan": "Pabrik",
+                "risk_cemar": "Tinggi"
+            }
+        },
+        {
+            "type": "Feature",
+            "id": 48,
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    101.4474022,
+                    0.53337599999999996
+                ]
+            },
+            "properties": {
+                "FID": 48,
+                "Timestamp": 1739232000000,
+                "Langitude": 0.53337599999999996,
+                "longitude": 101.4474022,
+                "keterangan": "Pabrik",
+                "risk_cemar": "Tinggi"
+            }
+        },
+        {
+            "type": "Feature",
+            "id": 49,
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    101.4269048,
+                    0.55705789999999999
+                ]
+            },
+            "properties": {
+                "FID": 49,
+                "Timestamp": 1739232000000,
+                "Langitude": 0.55705789999999999,
+                "longitude": 101.4269048,
+                "keterangan": "Pabrik",
+                "risk_cemar": "Tinggi"
+            }
+        },
+        {
+            "type": "Feature",
+            "id": 50,
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    101.42487029999999,
+                    0.56220910000000002
+                ]
+            },
+            "properties": {
+                "FID": 50,
+                "Timestamp": 1739232000000,
+                "Langitude": 0.56220910000000002,
+                "longitude": 101.42487029999999,
+                "keterangan": "Pabrik",
+                "risk_cemar": "Tinggi"
+            }
+        },
+        {
+            "type": "Feature",
+            "id": 51,
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    101.3986661,
+                    0.55551030000000001
+                ]
+            },
+            "properties": {
+                "FID": 51,
+                "Timestamp": 1739232000000,
+                "Langitude": 0.55551030000000001,
+                "longitude": 101.3986661,
+                "keterangan": "Pabrik",
+                "risk_cemar": "Tinggi"
+            }
+        },
+        {
+            "type": "Feature",
+            "id": 52,
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    101.4010851,
+                    0.56256890000000004
+                ]
+            },
+            "properties": {
+                "FID": 52,
+                "Timestamp": 1739232000000,
+                "Langitude": 0.56256890000000004,
+                "longitude": 101.4010851,
+                "keterangan": "Pabrik",
+                "risk_cemar": "Tinggi"
+            }
+        },
+        {
+            "type": "Feature",
+            "id": 53,
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    101.3976388,
+                    0.5779784
+                ]
+            },
+            "properties": {
+                "FID": 53,
+                "Timestamp": 1739232000000,
+                "Langitude": 0.5779784,
+                "longitude": 101.3976388,
+                "keterangan": "Pabrik",
+                "risk_cemar": "Tinggi"
+            }
+        },
+        {
+            "type": "Feature",
+            "id": 54,
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    101.3979815,
+                    0.58815119999999999
+                ]
+            },
+            "properties": {
+                "FID": 54,
+                "Timestamp": 1739232000000,
+                "Langitude": 0.58815119999999999,
+                "longitude": 101.3979815,
+                "keterangan": "Pabrik",
+                "risk_cemar": "Tinggi"
+            }
+        },
+        {
+            "type": "Feature",
+            "id": 55,
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    101.4220811,
+                    0.60305609999999998
+                ]
+            },
+            "properties": {
+                "FID": 55,
+                "Timestamp": 1739232000000,
+                "Langitude": 0.60305609999999998,
+                "longitude": 101.4220811,
+                "keterangan": "Pabrik",
+                "risk_cemar": "Tinggi"
+            }
+        },
+        {
+            "type": "Feature",
+            "id": 56,
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    101.4835886,
+                    0.5803661
+                ]
+            },
+            "properties": {
+                "FID": 56,
+                "Timestamp": 1739232000000,
+                "Langitude": 0.5803661,
+                "longitude": 101.4835886,
+                "keterangan": "Pertanian / Peternakan",
+                "risk_cemar": "Rendah"
+            }
+        },
+        {
+            "type": "Feature",
+            "id": 57,
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    101.4770319,
+                    0.56604220000000005
+                ]
+            },
+            "properties": {
+                "FID": 57,
+                "Timestamp": 1739232000000,
+                "Langitude": 0.56604220000000005,
+                "longitude": 101.4770319,
+                "keterangan": "Pertanian / Peternakan",
+                "risk_cemar": "Rendah"
+            }
+        },
+        {
+            "type": "Feature",
+            "id": 58,
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    101.45493449999999,
+                    0.56109739999999997
+                ]
+            },
+            "properties": {
+                "FID": 58,
+                "Timestamp": 1739232000000,
+                "Langitude": 0.56109739999999997,
+                "longitude": 101.45493449999999,
+                "keterangan": "Pertanian / Peternakan",
+                "risk_cemar": "Rendah"
+            }
+        },
+        {
+            "type": "Feature",
+            "id": 59,
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    101.4152928,
+                    0.58218930000000002
+                ]
+            },
+            "properties": {
+                "FID": 59,
+                "Timestamp": 1739232000000,
+                "Langitude": 0.58218930000000002,
+                "longitude": 101.4152928,
+                "keterangan": "Pertanian / Peternakan",
+                "risk_cemar": "Rendah"
+            }
+        },
+        {
+            "type": "Feature",
+            "id": 60,
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    101.40984589999999,
+                    0.58159050000000001
+                ]
+            },
+            "properties": {
+                "FID": 60,
+                "Timestamp": 1739232000000,
+                "Langitude": 0.58159050000000001,
+                "longitude": 101.40984589999999,
+                "keterangan": "Pertanian / Peternakan",
+                "risk_cemar": "Rendah"
+            }
+        },
+        {
+            "type": "Feature",
+            "id": 61,
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    101.4422105,
+                    0.64569290000000001
+                ]
+            },
+            "properties": {
+                "FID": 61,
+                "Timestamp": 1739232000000,
+                "Langitude": 0.64569290000000001,
+                "longitude": 101.4422105,
+                "keterangan": "TPA",
+                "risk_cemar": "Tinggi"
+            }
+        },
+        {
+            "type": "Feature",
+            "id": 62,
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    101.4434761,
+                    0.65946990000000005
+                ]
+            },
+            "properties": {
+                "FID": 62,
+                "Timestamp": 1739232000000,
+                "Langitude": 0.65946990000000005,
+                "longitude": 101.4434761,
+                "keterangan": "TPA",
+                "risk_cemar": "Tinggi"
+            }
+        },
+        {
+            "type": "Feature",
+            "id": 63,
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    101.4738474,
+                    0.56781499999999996
+                ]
+            },
+            "properties": {
+                "FID": 63,
+                "Timestamp": 1739232000000,
+                "Langitude": 0.56781499999999996,
+                "longitude": 101.4738474,
+                "keterangan": "Pabrik",
+                "risk_cemar": "Tinggi"
+            }
+        }
+    ]
+}
