@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Dataset Sumur</title>
+    <link rel="stylesheet" href="styleSumur.css" />
+  </head>
+  <body>
+    <header>
+      <h2>LiveForWell</h2>
+      <nav>
+        <a href="#">Dashboard</a>
+        <a href="#">Home</a>
+        <a href="#">Peta</a>
+        <a href="#">Dataset</a>
+      </nav>
+    </header>
+
+    <div class="container">
+      <h3>Tabel Sumur</h3>
+<input type="text" id="searchInput" placeholder="Cari kecamatan, bau, pH, warna..." />
+
+      <table>
+        <thead>
+          <tr>
+            <th>Kecamatan</th>
+            <th>Longitude</th>
+            <th>Latitude</th>
+            <th>Bau</th>
+            <th>PH</th>
+            <th>Rasa</th>
+            <th>Warna</th>
+          </tr>
+        </thead>
+        <tbody id="table-body">
+          <!-- Data akan dimasukkan lewat JS -->
+        </tbody>
+      </table>
+      <div class="pagination">
+        <button id="prevBtn">Previous</button>
+        <span id="pageInfo"></span>
+        <button id="nextBtn">Next</button>
+      </div>
+
+      <p id="info"></p>
+    </div>
+
+    <script src="mainSumur.js"></script>
+  </body>
+</html>
