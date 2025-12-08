@@ -2,353 +2,16 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>LiveForWell – GIS Water Quality</title>
+
   <link rel="icon" type="image/x-icon" href="https://openlayers.org/favicon.ico" />
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/css/bootstrap.min.css">
   <link rel="stylesheet" href="./style.css">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>LiveForWell – GIS Water Quality</title>
-  <style>
-    :root {
-      --primary: #2c9fbf;
-      --primary-dark: #1b6f82;
-      --accent: #f4b000;
-      --bg-overlay: rgba(0, 0, 0, 0.45);
-      --text-light: #f9f9f9;
-    }
-
-    body {
-      margin: 0;
-      font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
-      background-color: #050b11;
-      color: #111;
-    }
-
-    .page-wrapper {
-      min-height: 100vh;
-      display: flex;
-      flex-direction: column;
-    }
-
-    /* Top bar */
-    .top-bar {
-      background: #050b11;
-      color: #dbe9f5;
-      font-size: 0.8rem;
-      letter-spacing: 0.08em;
-      text-transform: uppercase;
-      padding: 0.35rem 1.25rem;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-    }
-
-    .top-bar a {
-      color: #dbe9f5;
-      text-decoration: none;
-    }
-
-    /* Hero section */
-    .hero {
-      position: relative;
-      flex: 1 0 auto;
-      display: flex;
-      align-items: stretch;
-      background: #000;
-      overflow: hidden;
-    }
-
-    .hero-bg {
-      position: absolute;
-      inset: 0;
-      background-image: url("image.jpg"); /* ganti dengan path gambar kamu */
-      background-size: cover;
-      background-position: center;
-      filter: brightness(0.8);
-      transform: scale(1.03);
-    }
-
-    .hero-overlay {
-      position: absolute;
-      inset: 0;
-      background: radial-gradient(circle at top left, rgba(3, 92, 115, 0.7), transparent 55%),
-                  linear-gradient(to bottom right, var(--bg-overlay), rgba(0, 0, 0, 0.7));
-    }
-
-    .hero-inner {
-      position: relative;
-      z-index: 1;
-      width: 100%;
-      display: flex;
-      flex-wrap: wrap;
-      align-items: stretch;
-      padding: 3rem 5vw;
-      color: var(--text-light);
-    }
-
-    .hero-left,
-    .hero-right {
-      min-width: 280px;
-    }
-
-    .hero-left {
-      flex: 1.2;
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
-      gap: 1.5rem;
-    }
-
-    .hero-badge {
-      display: inline-flex;
-      align-items: center;
-      gap: 0.5rem;
-      background: rgba(8, 31, 45, 0.7);
-      border-radius: 999px;
-      padding: 0.35rem 0.9rem;
-      font-size: 0.77rem;
-      letter-spacing: 0.12em;
-      text-transform: uppercase;
-    }
-
-    .hero-badge-dot {
-      width: 9px;
-      height: 9px;
-      border-radius: 50%;
-      background: radial-gradient(circle, #25ff9a, #1b6f82);
-      box-shadow: 0 0 0 3px rgba(37, 255, 154, 0.25);
-    }
-
-    .hero-title {
-      font-size: clamp(2.8rem, 4vw, 4rem);
-      font-weight: 800;
-      line-height: 1.05;
-      letter-spacing: 0.14em;
-      text-transform: uppercase;
-      color: transparent;
-      -webkit-text-stroke: 1px rgba(255, 255, 255, 0.9);
-      text-stroke: 1px rgba(255, 255, 255, 0.9);
-    }
-
-    .hero-title span.fill {
-      color: #ffffff;
-      -webkit-text-stroke: 0;
-      text-stroke: 0;
-    }
-
-    .hero-subtext {
-      max-width: 380px;
-      font-size: 0.95rem;
-      color: #e0edf5;
-    }
-
-    .hero-cta-group {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 0.8rem;
-      margin-top: 0.5rem;
-    }
-
-    .btn-primary-hero {
-      padding: 0.65rem 1.6rem;
-      border-radius: 999px;
-      border: none;
-      background-image: linear-gradient(120deg, var(--primary), var(--accent));
-      color: #051018;
-      font-weight: 600;
-      font-size: 0.9rem;
-      text-transform: uppercase;
-      letter-spacing: 0.09em;
-      box-shadow: 0 10px 24px rgba(0, 0, 0, 0.35);
-    }
-
-    .btn-outline-hero {
-      padding: 0.65rem 1.6rem;
-      border-radius: 999px;
-      border: 1px solid rgba(214, 231, 243, 0.8);
-      background: transparent;
-      color: #e5f2ff;
-      font-weight: 500;
-      font-size: 0.9rem;
-      text-transform: uppercase;
-      letter-spacing: 0.09em;
-      backdrop-filter: blur(2px);
-    }
-
-    .hero-meta {
-      display: flex;
-      align-items: center;
-      gap: 0.7rem;
-      font-size: 0.75rem;
-      margin-top: 0.5rem;
-      color: #aec6da;
-    }
-
-    .hero-meta-pill {
-      padding: 0.3rem 0.9rem;
-      border-radius: 999px;
-      border: 1px solid rgba(188, 213, 234, 0.5);
-      background: rgba(5, 19, 33, 0.6);
-    }
-
-    .hero-right {
-      flex: 0.9;
-      display: flex;
-      flex-direction: column;
-      justify-content: space-between;
-      gap: 1.5rem;
-      padding-left: min(5vw, 3rem);
-    }
-
-    .hero-card {
-      align-self: flex-end;
-      max-width: 320px;
-      background: rgba(7, 22, 34, 0.85);
-      border-radius: 1.3rem;
-      padding: 1.3rem 1.4rem;
-      backdrop-filter: blur(12px);
-      box-shadow: 0 18px 45px rgba(2, 10, 18, 0.85);
-    }
-
-    .hero-card-title {
-      font-size: 0.85rem;
-      text-transform: uppercase;
-      letter-spacing: 0.16em;
-      color: #c7def0;
-      margin-bottom: 0.4rem;
-    }
-
-    .hero-card-heading {
-      font-size: 1.05rem;
-      font-weight: 600;
-      color: #ffffff;
-      margin-bottom: 0.3rem;
-    }
-
-    .hero-card-body {
-      font-size: 0.86rem;
-      color: #cfdeec;
-      opacity: 0.95;
-      margin-bottom: 0.75rem;
-    }
-
-    .hero-card-link {
-      font-size: 0.83rem;
-      font-weight: 600;
-      letter-spacing: 0.08em;
-      text-transform: uppercase;
-      color: #7fd6ff;
-      text-decoration: none;
-    }
-
-    .hero-card-link span {
-      font-size: 0.9rem;
-    }
-
-    .hero-stats {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 1.3rem;
-      margin-top: auto;
-      color: #dde9f5;
-      font-size: 0.8rem;
-    }
-
-    .hero-stat-item strong {
-      display: block;
-      font-size: 1.1rem;
-    }
-
-    /* Map section */
-    .map-section {
-      position: relative;
-      height: 55vh;
-      background: #02070c;
-    }
-
-    #map {
-      width: 100%;
-      height: 100%;
-    }
-
-    .map-header {
-      position: absolute;
-      top: 0.75rem;
-      left: 1rem;
-      z-index: 2;
-      background: rgba(5, 14, 24, 0.85);
-      border-radius: 999px;
-      padding: 0.35rem 0.9rem;
-      font-size: 0.78rem;
-      color: #e4f1ff;
-      backdrop-filter: blur(10px);
-      border: 1px solid rgba(91, 143, 184, 0.5);
-    }
-
-    /* Popup */
-    .ol-popup {
-      position: absolute;
-      background-color: white;
-      box-shadow: 0 1px 4px rgba(0,0,0,0.2);
-      padding: 15px;
-      border-radius: 10px;
-      border: 1px solid #cccccc;
-      bottom: 12px;
-      left: -50px;
-      min-width: 200px;
-    }
-
-    .ol-popup:after, .ol-popup:before {
-      top: 100%;
-      border: solid transparent;
-      content: " ";
-      height: 0;
-      width: 0;
-      position: absolute;
-      pointer-events: none;
-    }
-
-    .ol-popup:after {
-      border-top-color: white;
-      border-width: 10px;
-      left: 48px;
-      margin-left: -10px;
-    }
-
-    .ol-popup:before {
-      border-top-color: #cccccc;
-      border-width: 11px;
-      left: 48px;
-      margin-left: -11px;
-    }
-
-    .ol-popup-closer {
-      text-decoration: none;
-      position: absolute;
-      top: 2px;
-      right: 8px;
-    }
-
-    .ol-popup-closer:after {
-      content: "✕";
-    }
-
-    /* Responsive */
-    @media (max-width: 768px) {
-      .hero-inner {
-        padding: 2.2rem 1.5rem 2.8rem;
-      }
-      .hero-right {
-        padding-left: 0;
-        margin-top: 2rem;
-      }
-      .hero-card {
-        align-self: stretch;
-      }
-    }
-  </style>
 </head>
-<body>
-    <!-- Navbar -->
+
+<body id="top">
+  <!-- Navbar -->
   <nav class="navbar navbar-expand-lg navbar-dark" style="background:#02060c;">
     <div class="container-fluid px-4">
       <a class="navbar-brand fw-bold" href="index.html">LiveForWell</a>
@@ -365,12 +28,12 @@
             <a class="nav-link active" aria-current="page" href="#top">Beranda</a>
           </li>
           <li class="nav-item">
-            <!-- scroll ke section project (ringkasan & indikator) -->
-            <a class="nav-link" href="#project">Dataset & Indikator</a>
+            <a class="nav-link" href="/map/tabel/dataAir.html">Data Air</a>
+          </li><li class="nav-item">
+            <a class="nav-link" href="/map/tabel/dataPencemaran.html">Data Toxic</a>
           </li>
           <li class="nav-item">
-            <!-- pindah ke halaman peta -->
-            <a class="nav-link" href="map.html">Peta Interaktif</a>
+            <a class="nav-link" href="./map/map.html">Peta Interaktif</a>
           </li>
         </ul>
       </div>
@@ -378,12 +41,11 @@
   </nav>
 
   <div class="page-wrapper">
+
     <!-- Top mini bar -->
     <div class="top-bar">
       <span>GIS PROJECT · LIVEFORWELL</span>
-      <a href="https://www.LifeForWell.com" target="_blank" rel="noopener noreferrer">
-        www.LifeForWell.com
-      </a>
+      <a href="https://www.LifeForWell.com" target="_blank" rel="noopener noreferrer">www.LifeForWell.com</a>
     </div>
 
     <!-- Hero section -->
@@ -392,10 +54,12 @@
       <div class="hero-overlay"></div>
 
       <div class="hero-inner">
+        
+        <!-- LEFT -->
         <div class="hero-left">
           <div class="hero-badge">
             <span class="hero-badge-dot"></span>
-            <span>Real‑time water safety dashboard</span>
+            <span>Real-time water safety dashboard</span>
           </div>
 
           <h1 class="hero-title">
@@ -408,20 +72,17 @@
           </p>
 
           <div class="hero-cta-group">
-            <a href="#map" class="btn btn-primary-hero">
-              Go to Analyze
-            </a>
-            <a href="#about" class="btn btn-outline-hero">
-              Explore Platform
-            </a>
+            <a href="./map/map.html" class="btn btn-primary-hero">Go to Analyze</a>
+            <a href="#about" class="btn btn-outline-hero">Explore Platform</a>
           </div>
 
           <div class="hero-meta">
-            <span class="hero-meta-pill">AI‑powered contamination alerts</span>
+            <span class="hero-meta-pill">AI-powered contamination alerts</span>
             <span>Verified by local water officers</span>
           </div>
         </div>
 
+        <!-- RIGHT -->
         <div class="hero-right">
           <div class="hero-card" id="about">
             <div class="hero-card-title">Apa itu LiveForWell</div>
@@ -431,9 +92,7 @@
               air sumur dalam skala desa hingga kabupaten, lengkap dengan histori pengukuran
               dan rekomendasi tindak lanjut.
             </p>
-            <a href="#map" class="hero-card-link">
-              Telusuri peta kualitas air <span>↗</span>
-            </a>
+            <a href="./map/map.html" class="hero-card-link">Telusuri peta kualitas air <span>↗</span></a>
           </div>
 
           <div class="hero-stats">
@@ -451,18 +110,24 @@
             </div>
           </div>
         </div>
+
       </div>
     </section>
-        <!-- Project overview section -->
+
+    <!-- Project overview -->
     <section id="project" class="py-5" style="background:#050b11; color:#e5edf7;">
       <div class="container">
         <div class="row g-4 align-items-start">
+
+          <!-- LEFT -->
           <div class="col-lg-6">
-            <h2 class="mb-3" style="font-weight:700;">Kenapa LiveForWell Penting?</h2>
+            <h2 class="mb-3 fw-bold">Kenapa LiveForWell Penting?</h2>
+
             <p class="mb-2">
               LiveForWell dibangun dari penelitian “Sistem Informasi Geografis Pemetaan Kualitas Air Sumur Dangkal
               untuk Evaluasi Keberlanjutan Sumber Air Bersih” yang berfokus pada sumur rumah tangga di wilayah Rumbai dan sekitarnya.
             </p>
+
             <p class="mb-3">
               Platform ini mengubah data survei lapangan (longitude, latitude, pH, bau, rasa, warna air, dan jenis sumber pencemar)
               menjadi peta interaktif sehingga area aman, sedang, dan rentan pencemaran dapat terlihat jelas secara spasial.
@@ -471,18 +136,19 @@
             <div class="row g-3">
               <div class="col-6">
                 <div class="p-3 h-100" style="border-radius:1rem; background:#071624;">
-                  <h6 class="text-uppercase mb-1" style="letter-spacing:.12em;font-size:.78rem;">Tujuan utama</h6>
-                  <ul class="mb-0" style="padding-left:1.1rem;font-size:.86rem;">
+                  <h6 class="text-uppercase mb-1" style="letter-spacing:.12em; font-size:.78rem;">Tujuan utama</h6>
+                  <ul class="mb-0" style="padding-left:1.1rem; font-size:.86rem;">
                     <li>Menganalisis kualitas air sumur dangkal.</li>
                     <li>Memetakan sebaran kualitas air dengan SIG.</li>
                     <li>Menilai keberlanjutan sumber air bersih.</li>
                   </ul>
                 </div>
               </div>
+
               <div class="col-6">
                 <div class="p-3 h-100" style="border-radius:1rem; background:#071624;">
-                  <h6 class="text-uppercase mb-1" style="letter-spacing:.12em;font-size:.78rem;">Manfaat bagi warga</h6>
-                  <ul class="mb-0" style="padding-left:1.1rem;font-size:.86rem;">
+                  <h6 class="text-uppercase mb-1" style="letter-spacing:.12em; font-size:.78rem;">Manfaat bagi warga</h6>
+                  <ul class="mb-0" style="padding-left:1.1rem; font-size:.86rem;">
                     <li>Informasi sumur layak & tidak layak.</li>
                     <li>Dukungan keputusan perbaikan sanitasi.</li>
                     <li>Dasar kebijakan pengelolaan air bersih.</li>
@@ -492,48 +158,50 @@
             </div>
           </div>
 
-          <!-- Kartu indikator kualitas air -->
+          <!-- RIGHT -->
           <div class="col-lg-6">
             <div class="p-4" style="border-radius:1.5rem; background:#071624;">
-              <h3 class="mb-3" style="font-weight:650;">Indikator Kualitas Air yang Dipantau</h3>
+
+              <h3 class="mb-3 fw-semibold">Indikator Kualitas Air yang Dipantau</h3>
+
               <p class="mb-3" style="font-size:.9rem;">
                 Setiap titik sumur di peta menyimpan ringkasan parameter fisik dan kimia yang umum dipakai
-                dalam penilaian air tanah rumah tangga. Nilai‑nilai ini dibandingkan dengan baku mutu air bersih
-                untuk menentukan kategori aman, waspada, atau berisiko. [web:27][web:35]
+                dalam penilaian air tanah rumah tangga. Nilai-nilai ini dibandingkan dengan baku mutu air bersih
+                untuk menentukan kategori aman, waspada, atau berisiko.
               </p>
 
               <div class="row g-3">
+                <!-- pH -->
                 <div class="col-sm-4">
                   <div class="p-3 h-100" style="border-radius:1rem; background:#050f1c;">
-                    <div style="font-size:.8rem; text-transform:uppercase; letter-spacing:.14em; color:#8fd4ff;">
-                      pH
-                    </div>
+                    <div style="font-size:.8rem; text-transform:uppercase; letter-spacing:.14em; color:#8fd4ff;">pH</div>
                     <div style="font-size:1.6rem; font-weight:700;">6 – 9</div>
                     <p class="mb-0" style="font-size:.8rem;">
-                      Rentang pH yang umum dipakai untuk air bersih layak konsumsi; nilai terlalu asam atau basa
-                      berpotensi melarutkan logam berat dan merusak pipa. [web:33][web:40]
+                      Rentang pH umum untuk air bersih layak konsumsi.
                     </p>
                   </div>
                 </div>
+
+                <!-- Warna & bau -->
                 <div class="col-sm-4">
                   <div class="p-3 h-100" style="border-radius:1rem; background:#050f1c;">
                     <div style="font-size:.8rem; text-transform:uppercase; letter-spacing:.14em; color:#8fd4ff;">
                       Warna & bau
                     </div>
                     <p class="mb-0" style="font-size:.8rem;">
-                      Perubahan warna menjadi kekuningan, keruh, atau muncul bau logam, tanah, dan minyak sering
-                      dikaitkan dengan kandungan besi tinggi atau pencemaran limbah domestik dan industri. [web:30][web:35]
+                      Perubahan warna atau bau mengindikasikan pencemaran.
                     </p>
                   </div>
                 </div>
+
+                <!-- Kedekatan pencemar -->
                 <div class="col-sm-4">
                   <div class="p-3 h-100" style="border-radius:1rem; background:#050f1c;">
                     <div style="font-size:.8rem; text-transform:uppercase; letter-spacing:.14em; color:#8fd4ff;">
                       Kedekatan sumber pencemar
                     </div>
                     <p class="mb-0" style="font-size:.8rem;">
-                      Jarak sumur terhadap TPA, pabrik, saluran limbah, dan aktivitas pertanian dianalisis dengan
-                      buffer dan overlay SIG untuk menilai zona risiko pencemaran. [web:24][web:36]
+                      Dianalisis menggunakan buffer & overlay SIG.
                     </p>
                   </div>
                 </div>
@@ -546,43 +214,50 @@
                 <span class="badge rounded-pill" style="background:#103050; font-size:.78rem;">
                   60+ titik sumber pencemar
                 </span>
-                <a href="#map" class="badge rounded-pill text-decoration-none"
+                <a href="./map/map.html" class="badge rounded-pill text-decoration-none"
                    style="background:linear-gradient(120deg,#2c9fbf,#f4b000); color:#051018; font-size:.78rem;">
                   Lihat distribusi di peta →
                 </a>
               </div>
+
             </div>
           </div>
+
         </div>
       </div>
     </section>
 
-        <!-- How it works / CTA -->
+    <!-- CTA -->
     <section id="cta" class="py-5" style="background:#02060c; color:#e5edf7;">
       <div class="container">
+
         <div class="row g-4 align-items-center">
+
+          <!-- LEFT -->
           <div class="col-lg-6">
-            <h2 class="mb-3" style="font-weight:700;">Mulai Analisis Kualitas Air</h2>
+            <h2 class="mb-3 fw-bold">Mulai Analisis Kualitas Air</h2>
+
             <p class="mb-3">
-              LiveForWell merangkum data survei sumur, sumber pencemar, dan parameter kualitas air ke dalam
-              alur analisis spasial sederhana yang bisa dipahami mahasiswa, dosen, maupun perangkat kelurahan.
+              LiveForWell merangkum data survei sumur, sumber pencemar, dan parameter kualitas air
+              ke dalam alur analisis spasial sederhana.
             </p>
-            <ol class="mb-3" style="padding-left:1.2rem;font-size:.9rem;">
-              <li>Buka halaman peta interaktif untuk melihat sebaran sumur dan sumber pencemar.</li>
-              <li>Klik titik sumur untuk melihat pH, bau, rasa, warna air, dan kecamatan.</li>
-              <li>Gunakan kategori warna untuk mengenali zona aman, waspada, dan rentan pencemaran.</li>
+
+            <ol class="mb-3" style="padding-left:1.2rem; font-size:.9rem;">
+              <li>Buka halaman peta interaktif.</li>
+              <li>Pilih titik sumur untuk melihat detail pH, bau, rasa, dan warna.</li>
+              <li>Gunakan kategori warna untuk mengenali zona risiko.</li>
             </ol>
-            <a href="map.html" class="btn btn-primary-hero">
-              Buka Peta LiveForWell
-            </a>
-            <a href="#project" class="btn btn-outline-hero ms-1">
-              Pelajari Metodologi
-            </a>
+
+            <a href="./map/map.html" class="btn btn-primary-hero">Buka Peta LiveForWell</a>
+            <a href="#project" class="btn btn-outline-hero ms-1">Pelajari Metodologi</a>
           </div>
 
+          <!-- RIGHT -->
           <div class="col-lg-6">
             <div class="p-4" style="border-radius:1.5rem; background:#071624;">
-              <h5 class="mb-3" style="font-weight:600;">Kategori Zona Risiko</h5>
+
+              <h5 class="mb-3 fw-semibold">Kategori Zona Risiko</h5>
+
               <table class="table table-sm mb-3" style="font-size:.85rem; color:#e5edf7;">
                 <thead>
                   <tr>
@@ -593,28 +268,32 @@
                 <tbody>
                   <tr>
                     <td><span style="color:#4ade80;">Aman</span></td>
-                    <td>pH mendekati baku mutu, warna jernih, bau dan rasa normal, jauh dari sumber pencemar utama.</td>
+                    <td>pH mendekati baku mutu, jernih, jauh dari pencemar.</td>
                   </tr>
                   <tr>
                     <td><span style="color:#facc15;">Waspada</span></td>
-                    <td>pH mulai menyimpang, muncul perubahan warna atau bau, atau berada dekat TPA, pabrik, atau limbah domestik.</td>
+                    <td>pH mulai menyimpang atau dekat sumber pencemar.</td>
                   </tr>
                   <tr>
                     <td><span style="color:#f97373;">Rentan</span></td>
-                    <td>indikasi kuat pencemaran fisik/kimia, banyak sumber pencemar di sekeliling, direkomendasikan tindakan lanjut.</td>
+                    <td>indikasi kuat pencemaran, banyak sumber pencemar dekat.</td>
                   </tr>
                 </tbody>
               </table>
+
               <p class="mb-0" style="font-size:.8rem;">
-                Klasifikasi zona dapat disesuaikan dengan standar baku mutu air bersih dan hasil analisis SIG di Bab III–IV proposal kamu.
+                Klasifikasi dapat disesuaikan dengan analisis SIG dan baku mutu air bersih.
               </p>
+
             </div>
           </div>
+
         </div>
+
       </div>
     </section>
 
-    <!-- Simple footer -->
+    <!-- Footer -->
     <footer class="py-3" style="background:#00050a; color:#9fb2c6; font-size:.8rem;">
       <div class="container d-flex flex-column flex-sm-row justify-content-between align-items-center gap-2">
         <span>© 2025 LiveForWell · Project SIG Kualitas Air Sumur Dangkal</span>
@@ -622,7 +301,8 @@
       </div>
     </footer>
 
+  </div> <!-- END page-wrapper -->
+
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/js/bootstrap.bundle.min.js"></script>
-  <script type="module" src="./main.js"></script>
 </body>
 </html>

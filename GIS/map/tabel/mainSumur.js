@@ -77,7 +77,7 @@ function setupSearchFilter() {
 }
 
 // Load JSON
-fetch("./data/waterData.json")
+fetch("../data/waterData.json")
     .then(res => res.json())
     .then(data => {
         features = data.features;
