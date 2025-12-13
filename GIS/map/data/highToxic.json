@@ -647,7 +647,7 @@
                     ]
                 ]
             },
-            "properties": {
+            "properties":{
                 "FID": 0,
                 "Timestamp": 1736553600000,
                 "Langitude": 0.61081790000000002,
