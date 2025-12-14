@@ -42,11 +42,17 @@ table {
 
 th {
     background: #eceff1;
+    text-align: center;
+    /* tengah horizontal */
+    vertical-align: middle;
     padding: 12px;
 }
 
 td {
     padding: 10px;
+    text-align: center;
+    /* tengah horizontal */
+    vertical-align: middle;
     border-bottom: 1px solid #ddd;
 }
 
@@ -74,6 +80,7 @@ tr[data-risk="Rendah"] {
     border: none;
     border-radius: 6px;
 }
+
 .pagination button:disabled {
     background: #b0bec5;
 }
