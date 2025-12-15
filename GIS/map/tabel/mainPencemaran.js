@@ -1,7 +1,7 @@
 let features = [];
 let filteredData = [];
 let currentPage = 1;
-const rowsPerPage = 5;
+const rowsPerPage = 10;
 
 function renderTablePage() {
   const tbody = document.getElementById("table-body");
