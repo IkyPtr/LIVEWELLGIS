@@ -1,6 +1,3 @@
-/* ===========================================
-   RESET & GLOBAL
-=========================================== */
 html, body {
   margin: 0;
   height: 100%;
@@ -8,11 +5,51 @@ html, body {
   font-family: system-ui, sans-serif;
 }
 
-/* Container Map */
-.map-section {
-  height: 100vh;
-  width: 100%;
+/* NAVBAR */
+.top-navbar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 56px;
+  background: #050b11;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 20px;
+  z-index: 1300;
+}
+
+.top-navbar .logo {
+  color: #e5edf7;
+  font-weight: 600;
+}
+
+.top-navbar ul {
+  list-style: none;
+  display: flex;
+  gap: 20px;
+  margin: 0;
+}
+
+.top-navbar li {
+  color: #cbd5e1;
+  cursor: pointer;
+  font-size: 0.9rem;
+  opacity: 0.7;
+}
+
+.top-navbar li.active,
+.top-navbar li:hover {
+  opacity: 1;
+  border-bottom: 2px solid #38bdf8;
+}
+
+/* MAP */
+.map-wrapper {
   position: relative;
+  height: 100vh;
+  padding-top: 56px;
 }
 
 #map {
@@ -20,64 +57,39 @@ html, body {
   height: 100%;
 }
 
-/* ===========================================
-   POPUP STYLE
-=========================================== */
+/* CONTROL */
+.map-control {
+  position: absolute;
+  top: 80px;
+  left: 20px;
+  background: #ffffff;
+  padding: 16px;
+  border-radius: 14px;
+  width: 220px;
+  box-shadow: 0 12px 30px rgba(0,0,0,0.2);
+  z-index: 1100;
+}
+
+/* POPUP */
 .ol-popup {
   position: absolute;
-  background: #fff;
+  background: #ffffff;
   padding: 12px 15px;
   border-radius: 10px;
   border: 1px solid #ccc;
   box-shadow: 0 4px 18px rgba(0,0,0,0.15);
-  min-width: 220px;
+  min-width: 240px;
+  z-index: 1200;
 }
 
-.ol-popup:after,
-.ol-popup:before {
-  top: 100%;
-  left: 50%;
-  border: solid transparent;
-  content: "";
-  height: 0;
-  width: 0;
-  position: absolute;
-}
-
-.ol-popup:after {
-  border-top-color: #fff;
-  border-width: 10px;
-  margin-left: -10px;
-}
-
-.ol-popup:before {
-  border-top-color: #ccc;
-  border-width: 11px;
-  margin-left: -11px;
-}
-
-/* Close button */
 .ol-popup-closer {
   position: absolute;
   top: 6px;
   right: 10px;
-  color: #333;
   text-decoration: none;
   font-size: 16px;
 }
 
 .ol-popup-closer:after {
   content: "✕";
-}
-
-/* NAVBAR (minimal) */
-nav {
-  background: #050b11;
-  padding: 10px 14px;
-}
-
-nav a {
-  color: #e5edf7;
-  text-decoration: none;
-  font-size: 0.9rem;
 }
