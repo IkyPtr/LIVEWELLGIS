@@ -1,83 +1,85 @@
 <!DOCTYPE html>
 <html lang="id">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Dataset Sumur – LiveForWell</title>
-    <link rel="stylesheet" href="styleSumur.css" />
-  </head>
-  <body>
-    <!-- Top bar mirip homepage -->
-    <header class="top-bar">
-      <div class="top-left">
-        <span class="logo-dot"></span>
-        <span class="brand">LiveForWell · Dataset Sumur</span>
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Dataset Sumur – LiveForWell</title>
+  <link rel="stylesheet" href="styleSumur.css" />
+</head>
+
+<body>
+  <!-- Top bar mirip homepage -->
+  <header class="top-bar">
+    <div class="top-left">
+      <span class="logo-dot"></span>
+      <span class="brand">LiveForWell</span>
+    </div>
+    <nav class="top-nav">
+      <a href="/index.html">Dashboard</a>
+      <a href="/map/map.html">Peta Interaktif</a>
+      <a href="/map/tabel/dataAir.html">Dataset Sumur</a>
+      <a href="/map/tabel/dataPencemaran.html">Dataset Pencemaran</a>
+    </nav>
+  </header>
+
+
+  <main class="page">
+    <section class="header-section">
+      <div>
+        <h2>Dataset Kualitas Air Sumur</h2>
+        <p>
+          Tabel ini menampilkan hasil survei sumur rumah tangga: lokasi, pH, bau, rasa, dan warna air.
+          Gunakan kolom pencarian untuk memfilter berdasarkan kecamatan atau parameter kualitas.
+        </p>
       </div>
-      <nav class="top-nav">
-        <a href="../../index.html">Dashboard</a>
-        <a href="../map.html">Peta Interaktif</a>
-      </nav>
-    </header>
+      <div class="search-wrapper">
+        <label for="searchInput">Cari data</label>
+        <input type="text" id="searchInput" placeholder="Cari kecamatan, bau, pH, warna..." />
+      </div>
+    </section>
 
-    <main class="page">
-      <section class="header-section">
-        <div>
-          <h2>Dataset Kualitas Air Sumur</h2>
-          <p>
-            Tabel ini menampilkan hasil survei sumur rumah tangga: lokasi, pH, bau, rasa, dan warna air.
-            Gunakan kolom pencarian untuk memfilter berdasarkan kecamatan atau parameter kualitas.
-          </p>
+    <section class="table-section">
+      <div class="table-card">
+        <div class="table-header">
+          <h3>Tabel Sumur</h3>
+          <span id="info" class="table-info"></span>
         </div>
-        <div class="search-wrapper">
-          <label for="searchInput">Cari data</label>
-          <input
-            type="text"
-            id="searchInput"
-            placeholder="Cari kecamatan, bau, pH, warna..."
-          />
+
+        <div class="table-wrapper">
+          <table>
+            <thead>
+              <tr>
+                <th>Kecamatan</th>
+                <th>Longitude</th>
+                <th>Latitude</th>
+                <th>Bau</th>
+                <th>pH</th>
+                <th>Rasa</th>
+                <th>Warna</th>
+              </tr>
+            </thead>
+            <tbody id="table-body">
+              <!-- Data dari mainSumur.js -->
+            </tbody>
+          </table>
         </div>
-      </section>
 
-      <section class="table-section">
-        <div class="table-card">
-          <div class="table-header">
-            <h3>Tabel Sumur</h3>
-            <span id="info" class="table-info"></span>
-          </div>
-
-          <div class="table-wrapper">
-            <table>
-              <thead>
-                <tr>
-                  <th>Kecamatan</th>
-                  <th>Longitude</th>
-                  <th>Latitude</th>
-                  <th>Bau</th>
-                  <th>pH</th>
-                  <th>Rasa</th>
-                  <th>Warna</th>
-                </tr>
-              </thead>
-              <tbody id="table-body">
-                <!-- Data dari mainSumur.js -->
-              </tbody>
-            </table>
-          </div>
-
-          <div class="pagination">
-            <button id="prevBtn">Previous</button>
-            <span id="pageInfo"></span>
-            <button id="nextBtn">Next</button>
-          </div>
+        <div class="pagination">
+          <button id="prevBtn">Previous</button>
+          <span id="pageInfo"></span>
+          <button id="nextBtn">Next</button>
         </div>
-      </section>
-    </main>
+      </div>
+    </section>
+  </main>
 
-    <footer class="footer">
-      <span>© 2025 LiveForWell · Project SIG Kualitas Air Sumur Dangkal</span>
-      <span>Kelompok 5 · Sistem Informasi Geografis</span>
-    </footer>
+  <footer class="footer">
+    <span>© 2025 LiveForWell · Project SIG Kualitas Air Sumur Dangkal</span>
+    <span>Kelompok 5 · Sistem Informasi Geografis</span>
+  </footer>
 
-    <script src="mainSumur.js"></script>
-  </body>
+  <script src="mainSumur.js"></script>
+</body>
+
 </html>
