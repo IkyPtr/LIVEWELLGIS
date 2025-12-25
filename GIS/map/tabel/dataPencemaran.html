@@ -1,44 +1,58 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
   <title>Tabel Data Pencemaran</title>
   <link rel="stylesheet" href="stylePencemaran.css">
 </head>
+
 <body>
 
-<header>
-  <h2>LiveForWell</h2>
-</header>
+  <header class="top-bar">
+    <div class="top-left">
+      <span class="logo-dot"></span>
+      <span class="brand">LiveForWell</span>
+    </div>
+    <nav class="top-nav">
+      <a href="/index.html">Dashboard</a>
+      <a href="/map/map.html">Peta Interaktif</a>
+      <a href="/map/tabel/dataAir.html">Dataset Sumur</a>
+      <a href="/map/tabel/dataPencemaran.html">Dataset Pencemaran</a>
+    </nav>
+  </header>
 
-<div class="container">
-  <h3>Tabel Data Pencemaran</h3>
 
-  <input
-    type="text"
-    id="searchInput"
-    placeholder="Cari keterangan atau risiko pencemaran..."
-  >
+  <div class="container">
+    <h3>Tabel Data Pencemaran</h3>
 
-  <table>
-    <thead>
-      <tr>
-        <th>Latitude</th>
-        <th>Longitude</th>
-        <th>Keterangan</th>
-        <th>Risiko</th>
-      </tr>
-    </thead>
-    <tbody id="table-body"></tbody>
-  </table>
+    <div class="table-card">
+      <input type="text" id="searchInput" placeholder="Cari keterangan atau risiko pencemaran..." />
 
-  <div class="pagination">
-    <button id="prevBtn">Previous</button>
-    <span id="pageInfo"></span>
-    <button id="nextBtn">Next</button>
+      <div class="table-wrapper">
+        <table>
+          <thead>
+            <tr>
+              <th>Latitude</th>
+              <th>Longitude</th>
+              <th>Keterangan</th>
+              <th>Risiko</th>
+            </tr>
+          </thead>
+          <tbody id="table-body"></tbody>
+        </table>
+      </div>
+
+      <div class="pagination">
+        <button id="prevBtn">Previous</button>
+        <span id="pageInfo"></span>
+        <button id="nextBtn">Next</button>
+      </div>
+    </div>
   </div>
-</div>
 
-<script src="mainPencemaran.js"></script>
+
+  <script src="mainPencemaran.js"></script>
 </body>
+
 </html>

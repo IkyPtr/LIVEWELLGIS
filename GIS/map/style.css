@@ -199,8 +199,8 @@ nav a {
 /* Tombol Toggle Legend (pojok KIRI bawah) */
 .legend-toggle-btn {
   position: absolute;
-  bottom: 20px;
-  left: 20px;  /* ← DIGANTI dari right ke left */
+  bottom: 80px;  /* ← DINAIKKAN dari 20px ke 80px */
+  left: 20px;
   background: #2196F3;
   color: white;
   border: none;
@@ -230,8 +230,8 @@ nav a {
 /* Panel Legend */
 .legend-panel {
   position: absolute;
-  bottom: 70px;
-  left: 20px;  /* ← DIGANTI dari right ke left */
+  bottom: 130px;  /* ← DINAIKKAN dari 70px ke 130px */
+  left: 20px;
   background: white;
   border-radius: 10px;
   box-shadow: 0 4px 18px rgba(0, 0, 0, 0.2);
@@ -239,7 +239,7 @@ nav a {
   max-height: 500px;
   overflow-y: auto;
   z-index: 998;
-  display: none; /* Hidden by default */
+  display: none;
   animation: slideInUp 0.3s ease;
 }
 
@@ -349,15 +349,18 @@ nav a {
 /* Responsive */
 @media (max-width: 768px) {
   .legend-toggle-btn {
-    bottom: 15px;
-    left: 15px;  /* ← DIGANTI dari right ke left */
+    bottom: 70px;  /* ← DINAIKKAN dari 15px ke 70px */
+    left: 15px;
     padding: 8px 12px;
     font-size: 12px;
   }
 
   .legend-panel {
     width: 240px;
-    bottom: 60px;
-    left: 15px;  /* ← DIGANTI dari right ke left */
+    bottom: 120px;  /* ← DINAIKKAN dari 60px ke 120px */
+    left: 15px;
   }
+}
+.ol-control {
+  display: none !important;
 }

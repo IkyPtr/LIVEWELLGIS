@@ -265,6 +265,7 @@ map.on('singleclick', (evt) => {
     container.classList.remove('scale-up-tl');
   }
 });
+
 // ===============================
 // Legend Toggle Functionality
 // ===============================

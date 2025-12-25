@@ -1,86 +1,198 @@
-body {
-    margin: 0;
-    font-family: Arial, sans-serif;
-    background: #90a4ae;
+:root {
+  --primary: #2c9fbf;
+  --accent: #f4b000;
+  --bg-dark: #050b11;
+  --bg-card: #071624;
+  --text-light: #e5edf7;
 }
 
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI",
+    sans-serif;
+  background: radial-gradient(circle at top left, #061725, #02040a);
+  color: var(--text-light);
+}
+
+/* ===== TOP BAR ===== */
 header {
-    display: flex;
-    justify-content: space-between;
-    background: #ffffff;
-    padding: 15px 40px;
-    border-bottom: 1px solid #ccc;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0.75rem 2.2rem;
+  background: #050b11;
+  color: #dbe9f5;
+  font-size: 0.85rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  border-bottom: 1px solid rgba(52, 79, 111, 0.7);
+}
+
+header h2 {
+  margin: 0;
+  font-size: 1.1rem;
+  letter-spacing: 0.14em;
 }
 
 nav a {
-    margin-left: 20px;
-    text-decoration: none;
-    font-weight: bold;
-    color: #263238;
+  color: #dbe9f5;
+  text-decoration: none;
+  margin-left: 1.3rem;
 }
 
+nav a:hover {
+  color: var(--accent);
+}
+
+/* ===== LAYOUT UTAMA ===== */
 .container {
-    background: #ffffff;
-    margin: 40px auto;
-    padding: 25px;
-    width: 90%;
-    border-radius: 10px;
+  max-width: 1280px;
+  margin: 2.2rem auto 2.5rem;
+  padding: 0 2rem;
 }
 
+.container > h3 {
+  margin: 0 0 0.8rem;
+  font-size: 1.3rem;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+}
+
+/* Card tabel */
+.table-card {
+  background: var(--bg-card);
+  border-radius: 1.4rem;
+  padding: 1.6rem 1.8rem 1.2rem;
+  box-shadow: 0 18px 50px rgba(0, 0, 0, 0.7);
+  border: 1px solid rgba(86, 132, 175, 0.6);
+}
+
+/* Search */
 #searchInput {
-    width: 300px;
-    padding: 8px;
-    margin-bottom: 15px;
-    border-radius: 6px;
-    border: 1px solid #aaa;
+  min-width: 320px;
+  padding: 0.7rem 1rem;
+  border-radius: 999px;
+  border: 1px solid rgba(148, 179, 207, 0.6);
+  background: rgba(3, 16, 32, 0.85);
+  color: var(--text-light);
+  font-size: 0.95rem;
+  margin-bottom: 1rem;
 }
 
+#searchInput::placeholder {
+  color: #7c94ad;
+}
+
+/* Wrapper tabel agar mendekati satu layar */
+.table-wrapper {
+  max-height: calc(100vh - 310px);
+  overflow: auto;
+  border-radius: 0.9rem;
+  border: 1px solid rgba(85, 112, 141, 0.4);
+}
+
+/* Tabel */
 table {
-    width: 100%;
-    border-collapse: collapse;
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 0.95rem;
+  color: var(--text-light);
+}
+
+thead {
+  background: rgba(10, 28, 48, 0.95);
+  position: sticky;
+  top: 0;
+  z-index: 1;
+}
+
+th,
+td {
+  padding: 0.7rem 0.9rem;
+  text-align: center;
+  vertical-align: middle;
+  border-bottom: 1px solid rgba(63, 88, 117, 0.4);
 }
 
 th {
-    background: #eceff1;
-    text-align: center;
-    /* tengah horizontal */
-    vertical-align: middle;
-    padding: 12px;
+  font-weight: 600;
+  font-size: 0.85rem;
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
+  color: #a9c1dd;
 }
 
-td {
-    padding: 10px;
-    text-align: center;
-    /* tengah horizontal */
-    vertical-align: middle;
-    border-bottom: 1px solid #ddd;
-}
-
+/* Warna baris berdasarkan risiko */
 tr[data-risk="Tinggi"] {
-    background: #ffebee;
+  background: rgba(239, 68, 68, 0.12);
 }
 
 tr[data-risk="Sedang"] {
-    background: #fffde7;
+  background: rgba(234, 179, 8, 0.12);
 }
 
 tr[data-risk="Rendah"] {
-    background: #e8f5e9;
+  background: rgba(34, 197, 94, 0.12);
 }
 
+tbody tr:hover {
+  background: rgba(44, 159, 191, 0.2);
+}
+
+/* Pagination */
 .pagination {
-    margin-top: 15px;
-    text-align: center;
+  margin-top: 1rem;
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  gap: 1rem;
+  font-size: 0.9rem;
 }
 
 .pagination button {
-    padding: 8px 16px;
-    background: #546e7a;
-    color: white;
-    border: none;
-    border-radius: 6px;
+  padding: 0.45rem 1.1rem;
+  border-radius: 999px;
+  border: 1px solid rgba(146, 182, 212, 0.8);
+  background: transparent;
+  color: var(--text-light);
+  cursor: pointer;
+}
+
+.pagination button:hover {
+  border-color: var(--accent);
+  background: rgba(244, 176, 0, 0.12);
 }
 
 .pagination button:disabled {
-    background: #b0bec5;
+  border-color: rgba(120, 144, 156, 0.7);
+  background: rgba(55, 65, 81, 0.8);
+  cursor: default;
+}
+
+#pageInfo {
+  color: #9bb5cf;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .container {
+    padding: 0 1rem;
+  }
+
+  #searchInput {
+    width: 100%;
+    min-width: 0;
+  }
+
+  .table-card {
+    padding: 1.2rem 1.1rem 1rem;
+  }
+
+  .table-wrapper {
+    max-height: calc(100vh - 340px);
+  }
 }
