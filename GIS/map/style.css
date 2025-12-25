@@ -8,18 +8,35 @@ html, body {
   font-family: system-ui, sans-serif;
 }
 
-/* Container Map */
+/* NAVBAR FIXED - Tidak ikut scroll */
+nav.navbar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 1000;
+  background: #050b11 !important;
+  padding: 10px 14px;
+}
+
+nav a {
+  color: #e5edf7;
+  text-decoration: none;
+  font-size: 0.9rem;
+}
+
+/* Container Map - dengan padding top untuk navbar */
 .map-section {
   height: 100vh;
   width: 100%;
   position: relative;
+  padding-top: 56px; /* Sesuaikan dengan tinggi navbar */
 }
 
 #map {
   width: 100%;
   height: 100%;
 }
-
 /* ===========================================
    POPUP STYLE
 =========================================== */
@@ -28,7 +45,7 @@ html, body {
   background: #fff;
   padding: 0;
   border-radius: 10px;
-  border: 1px solid #ccc;
+  border: 1px solid #1b6f82;
   box-shadow: 0 4px 18px rgba(0,0,0,0.15);
   min-width: 280px;
   max-width: 350px;
@@ -74,27 +91,44 @@ html, body {
   }
 }
 
-.ol-popup:after,
-.ol-popup:before {
-  top: 100%;
-  left: 50%;
-  border: solid transparent;
-  content: "";
-  height: 0;
-  width: 0;
-  position: absolute;
+/* Animasi Scale Down untuk Close */
+.scale-down-tl {
+  -webkit-animation: scale-down-tl 0.4s cubic-bezier(0.250, 0.460, 0.450, 0.940) both;
+  animation: scale-down-tl 0.4s cubic-bezier(0.250, 0.460, 0.450, 0.940) both;
 }
 
-.ol-popup:after {
-  border-top-color: #fff;
-  border-width: 10px;
-  margin-left: -10px;
+@-webkit-keyframes scale-down-tl {
+  0% {
+    -webkit-transform: scale(1);
+    transform: scale(1);
+    -webkit-transform-origin: 0% 0%;
+    transform-origin: 0% 0%;
+    opacity: 1;
+  }
+  100% {
+    -webkit-transform: scale(0.5);
+    transform: scale(0.5);
+    -webkit-transform-origin: 0% 0%;
+    transform-origin: 0% 0%;
+    opacity: 0;
+  }
 }
 
-.ol-popup:before {
-  border-top-color: #ccc;
-  border-width: 11px;
-  margin-left: -11px;
+@keyframes scale-down-tl {
+  0% {
+    -webkit-transform: scale(1);
+    transform: scale(1);
+    -webkit-transform-origin: 0% 0%;
+    transform-origin: 0% 0%;
+    opacity: 1;
+  }
+  100% {
+    -webkit-transform: scale(0.5);
+    transform: scale(0.5);
+    -webkit-transform-origin: 0% 0%;
+    transform-origin: 0% 0%;
+    opacity: 0;
+  }
 }
 
 /* Close button */
@@ -120,7 +154,7 @@ html, body {
 
 /* Popup Header & Body */
 .popup-header {
-  background-color: #2196F3;
+  background: linear-gradient(135deg, #2c9fbf, #1b6f82);
   color: white;
   padding: 12px 15px;
   border-radius: 10px 10px 0 0;
@@ -137,6 +171,26 @@ html, body {
   padding: 15px;
   max-height: 400px;
   overflow-y: auto;
+  scrollbar-width: thin;
+  scrollbar-color: #2c9fbf #e0e0e0;
+}
+
+.popup-body::-webkit-scrollbar {
+  width: 6px;
+}
+
+.popup-body::-webkit-scrollbar-track {
+  background: #f1f1f1;
+  border-radius: 10px;
+}
+
+.popup-body::-webkit-scrollbar-thumb {
+  background: #2c9fbf;
+  border-radius: 10px;
+}
+
+.popup-body::-webkit-scrollbar-thumb:hover {
+  background: #1b6f82;
 }
 
 .popup-body p {
@@ -172,12 +226,17 @@ html, body {
 }
 
 .badge-rendah {
-  background-color: #FFC107;
-  color: white;
+  background-color: #f4b000;
+  color: #051018;
 }
 
 .badge-sedang {
   background-color: #FF9800;
+  color: white;
+}
+
+.badge-buruk {
+  background-color: #f44336;
   color: white;
 }
 
@@ -192,6 +251,7 @@ nav a {
   text-decoration: none;
   font-size: 0.9rem;
 }
+
 /* ===========================================
    LEGEND STYLES
 =========================================== */
@@ -199,9 +259,9 @@ nav a {
 /* Tombol Toggle Legend (pojok KIRI bawah) */
 .legend-toggle-btn {
   position: absolute;
-  bottom: 80px;  /* ← DINAIKKAN dari 20px ke 80px */
+  bottom: 20px;
   left: 20px;
-  background: #2196F3;
+  background: linear-gradient(135deg, #2c9fbf, #1b6f82);
   color: white;
   border: none;
   border-radius: 8px;
@@ -218,7 +278,7 @@ nav a {
 }
 
 .legend-toggle-btn:hover {
-  background: #1976D2;
+  background: linear-gradient(135deg, #1b6f82, #0d4451);
   transform: translateY(-2px);
   box-shadow: 0 6px 16px rgba(0, 0, 0, 0.3);
 }
@@ -230,7 +290,7 @@ nav a {
 /* Panel Legend */
 .legend-panel {
   position: absolute;
-  bottom: 130px;  /* ← DINAIKKAN dari 70px ke 130px */
+  bottom: 130px;
   left: 20px;
   background: white;
   border-radius: 10px;
@@ -260,7 +320,7 @@ nav a {
 
 /* Legend Header */
 .legend-header {
-  background: #2196F3;
+  background: linear-gradient(135deg, #2c9fbf, #1b6f82);
   color: white;
   padding: 12px 15px;
   border-radius: 10px 10px 0 0;
@@ -346,10 +406,71 @@ nav a {
   margin: 12px 0;
 }
 
+/* ===========================================
+   CUSTOM ZOOM CONTROLS 
+=========================================== */
+.zoom-controls {
+  position: absolute;
+  bottom: 20px; /* Posisi tetap di bawah */
+  left: 140px; /* Di samping kanan legend button */
+  display: flex;
+  flex-direction: row; /* horizontal */
+  gap: 8px;
+  z-index: 999;
+  /* HAPUS transition agar tidak ada animasi gerak */
+}
+
+/* HAPUS atau COMMENT class shift-up ini */
+/* .zoom-controls.shift-up {
+  bottom: 130px;
+} */
+
+.zoom-btn {
+  width: 40px;
+  height: 40px;
+  background: linear-gradient(135deg, #2c9fbf, #1b6f82);
+  color: white;
+  border: none;
+  border-radius: 8px;
+  font-size: 24px;
+  font-weight: 600;
+  cursor: pointer;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.3s ease;
+  line-height: 1;
+}
+
+.zoom-btn:hover {
+  background: linear-gradient(135deg, #1b6f82, #0d4451);
+  transform: translateY(-2px);
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.3);
+}
+
+.zoom-btn:active {
+  transform: translateY(0);
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .zoom-controls {
+    bottom: 20px; /* Tetap di posisi bawah */
+    left: 120px;
+  }
+
+  .zoom-btn {
+    width: 36px;
+    height: 36px;
+    font-size: 20px;
+  }
+}
 /* Responsive */
 @media (max-width: 768px) {
   .legend-toggle-btn {
-    bottom: 70px;  /* ← DINAIKKAN dari 15px ke 70px */
+    bottom: 70px;
     left: 15px;
     padding: 8px 12px;
     font-size: 12px;
@@ -357,10 +478,59 @@ nav a {
 
   .legend-panel {
     width: 240px;
-    bottom: 120px;  /* ← DINAIKKAN dari 60px ke 120px */
+    bottom: 120px;
     left: 15px;
   }
+
+  .zoom-controls {
+    bottom: 70px;
+    left: 120px;
+  }
+
+  .zoom-controls.shift-up {
+    bottom: 120px;
+  }
+
+  .zoom-btn {
+    width: 36px;
+    height: 36px;
+    font-size: 20px;
+  }
 }
+/* Responsive */
+@media (max-width: 768px) {
+  .legend-toggle-btn {
+    bottom: 70px;
+    left: 15px;
+    padding: 8px 12px;
+    font-size: 12px;
+  }
+
+  .legend-panel {
+    width: 240px;
+    bottom: 120px;
+    left: 15px;
+  }
+
+  .zoom-controls {
+    bottom: 70px;
+    left: 120px;
+  }
+
+  .zoom-controls.shift-up {
+    bottom: 120px;
+  }
+
+  .zoom-btn {
+    width: 36px;
+    height: 36px;
+    font-size: 20px;
+  }
+}
+
+/* ===========================================
+   HIDE OPENLAYERS CONTROLS
+=========================================== */
 .ol-control {
   display: none !important;
 }

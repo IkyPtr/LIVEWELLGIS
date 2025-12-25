@@ -38,7 +38,7 @@ function createIconLayer(url, iconSrc, layerType) {
       image: new Icon({
         src: iconSrc,
         anchor: [0.5, 1],
-        scale: 0.10  // Diperkecil dari 0.15 ke 0.10
+        scale: 0.10
       })
     }),
     properties: { layerType }
@@ -56,7 +56,7 @@ function createBufferLayer(url, fillColor, strokeColor, layerType) {
     }),
     style: new Style({
       fill: new Fill({
-        color: fillColor  // RGBA dengan transparansi
+        color: fillColor
       }),
       stroke: new Stroke({
         color: strokeColor,
@@ -68,36 +68,35 @@ function createBufferLayer(url, fillColor, strokeColor, layerType) {
 }
 
 // ===============================
-// Add Buffer Layers (Ditambahkan dulu, agar di bawah icon)
+// Add Buffer Layers
 // ===============================
 const lowToxicBuffer = createBufferLayer(
   'data/lowToxic.json',
-  'rgba(255, 193, 7, 0.25)',   // Kuning transparan (100m)
+  'rgba(255, 193, 7, 0.25)',
   '#FFC107',
   'buffer-low'
 );
 
 const midToxicBuffer = createBufferLayer(
   'data/midToxic.json',
-  'rgba(255, 152, 0, 0.3)',    // Oranye transparan (200m)
+  'rgba(255, 152, 0, 0.3)',
   '#FF9800',
   'buffer-mid'
 );
 
 const highToxicBuffer = createBufferLayer(
   'data/highToxic.json',
-  'rgba(244, 67, 54, 0.35)',   // Merah transparan (500m)
+  'rgba(244, 67, 54, 0.35)',
   '#f44336',
   'buffer-high'
 );
 
-// Tambahkan buffer layers ke map (urutan penting: dari bawah ke atas)
-map.addLayer(highToxicBuffer);  // Layer paling bawah
+map.addLayer(highToxicBuffer);
 map.addLayer(midToxicBuffer);
 map.addLayer(lowToxicBuffer);
 
 // ===============================
-// Add Icon Layers (Di atas buffer)
+// Add Icon Layers
 // ===============================
 const sumurLayer = createIconLayer('data/waterData.json', 'icon/sumur.png', 'sumur');
 const pencemarLayer = createIconLayer('data/dataToxic.json', 'icon/air.png', 'pencemar');
@@ -114,12 +113,10 @@ async function zoomToRandomWaterPoint() {
     const geojson = await response.json();
     
     if (geojson.features && geojson.features.length > 0) {
-      // Pilih feature random
       const randomIndex = Math.floor(Math.random() * geojson.features.length);
       const randomFeature = geojson.features[randomIndex];
       const coords = randomFeature.geometry.coordinates;
       
-      // Zoom ke koordinat random dengan animasi
       map.getView().animate({
         center: fromLonLat(coords),
         zoom: 15,
@@ -131,7 +128,6 @@ async function zoomToRandomWaterPoint() {
   }
 }
 
-// Panggil fungsi saat halaman dimuat
 zoomToRandomWaterPoint();
 
 // ===============================
@@ -148,9 +144,19 @@ const overlay = new Overlay({
 
 map.addOverlay(overlay);
 
-closer.onclick = () => {
-  overlay.setPosition(undefined);
+function closePopup() {
   container.classList.remove('scale-up-tl');
+  container.classList.add('scale-down-tl');
+  
+  setTimeout(() => {
+    overlay.setPosition(undefined);
+    container.classList.remove('scale-down-tl');
+  }, 400);
+}
+
+closer.onclick = (e) => {
+  e.preventDefault();
+  closePopup();
   return false;
 };
 
@@ -158,24 +164,30 @@ closer.onclick = () => {
 // Helper Functions untuk Format Popup
 // ===============================
 function formatDataAir(props) {
+  const kualitas = props.kualitas || props.Kualitas;
+  
   return `
     <div class="popup-header">
-      <h5>📍 Data Sumur Air</h5>
+      <h5>💧 Data Sumur Air</h5>
     </div>
     <div class="popup-body">
-      <p><strong>Nama:</strong> ${props.Nama || '-'}</p>
+      <p><strong>Nama Pemilik:</strong> ${props.Nama || '-'}</p>
       <p><strong>Kecamatan:</strong> ${props.Kecamatan || '-'}</p>
       <p><strong>Koordinat:</strong> ${props.Langitude}, ${props.Longtitude}</p>
       <hr>
       <p><strong>pH:</strong> ${props.PH || '-'}</p>
-      <p><strong>Kategori pH:</strong> <span class="badge">${props.kat_pH || '-'}</span></p>
+      <p><strong>Kategori pH:</strong> <span class="badge ${props.kat_pH === 'Layak Diminum' ? 'badge-baik' : props.kat_pH === 'Basa Ringan' ? 'badge-rendah' : 'badge-sedang'}">${props.kat_pH || '-'}</span></p>
       <p><strong>Warna:</strong> ${props.Warna || '-'}</p>
-      <p><strong>Kategori Warna:</strong> ${props.kat_warna || '-'}</p>
+      <p><strong>Kategori Warna:</strong> <span class="badge ${props.kat_warna === 'normal' ? 'badge-baik' : props.kat_warna === 'bahaya' ? 'badge-tinggi' : 'badge-sedang'}">${props.kat_warna || '-'}</span></p>
       <p><strong>Rasa:</strong> ${props.Rasa || '-'}</p>
-      <p><strong>Kategori Rasa:</strong> ${props.kat_rasa || '-'}</p>
+      <p><strong>Kategori Rasa:</strong> <span class="badge ${props.kat_rasa === 'normal' ? 'badge-baik' : props.kat_rasa === 'bahaya' ? 'badge-tinggi' : 'badge-sedang'}">${props.kat_rasa || '-'}</span></p>
       <p><strong>Bau:</strong> ${props.Bau || '-'}</p>
       <hr>
-      <p><strong>Kualitas:</strong> <span class="badge badge-${props.kualitas?.toLowerCase()}">${props.kualitas || '-'}</span></p>
+      ${kualitas ? 
+        `<p><strong>Kualitas Air:</strong> <span class="badge badge-${kualitas.toLowerCase()}">${kualitas}</span></p>` 
+        : 
+        `<p><strong>Kualitas Air:</strong> <span style="color: #999; font-style: italic;">Belum ada data</span></p>`
+      }
     </div>
   `;
 }
@@ -235,7 +247,6 @@ map.on('singleclick', (evt) => {
     
     let html = '';
     
-    // Tentukan format berdasarkan tipe layer
     if (layerType === 'sumur') {
       html = formatDataAir(props);
     } else if (layerType === 'pencemar') {
@@ -245,47 +256,61 @@ map.on('singleclick', (evt) => {
     }
     
     content.innerHTML = html;
-    
-    // Hapus class animasi dulu (jika ada)
-    container.classList.remove('scale-up-tl');
-    
-    // Trigger reflow untuk restart animasi
+    container.classList.remove('scale-up-tl', 'scale-down-tl');
     void container.offsetWidth;
-    
-    // Tambahkan class animasi
     container.classList.add('scale-up-tl');
-    
     overlay.setPosition(coord);
     featureFound = true;
   });
   
-  // Jika tidak ada feature yang diklik, sembunyikan popup
   if (!featureFound) {
-    overlay.setPosition(undefined);
-    container.classList.remove('scale-up-tl');
+    if (overlay.getPosition()) {
+      closePopup();
+    }
   }
 });
 
 // ===============================
-// Legend Toggle Functionality
+// Legend & Zoom Controls
 // ===============================
 const legendToggleBtn = document.getElementById('legend-toggle');
 const legendPanel = document.getElementById('legend-panel');
 const legendCloseBtn = document.getElementById('legend-close');
+const zoomControls = document.getElementById('zoom-controls');
+const zoomInBtn = document.getElementById('zoom-in');
+const zoomOutBtn = document.getElementById('zoom-out');
 
-// Toggle legend saat tombol diklik
+// Zoom functionality
+zoomInBtn.addEventListener('click', () => {
+  const view = map.getView();
+  view.animate({
+    zoom: view.getZoom() + 1,
+    duration: 250
+  });
+});
+
+zoomOutBtn.addEventListener('click', () => {
+  const view = map.getView();
+  view.animate({
+    zoom: view.getZoom() - 1,
+    duration: 250
+  });
+});
+
+// Legend toggle with zoom shift
 legendToggleBtn.addEventListener('click', () => {
   legendPanel.classList.toggle('show');
+  zoomControls.classList.toggle('shift-up');
 });
 
-// Close legend saat tombol close diklik
 legendCloseBtn.addEventListener('click', () => {
   legendPanel.classList.remove('show');
+  zoomControls.classList.remove('shift-up');
 });
 
-// Close legend saat klik di luar panel
 document.addEventListener('click', (e) => {
   if (!legendPanel.contains(e.target) && !legendToggleBtn.contains(e.target)) {
     legendPanel.classList.remove('show');
+    zoomControls.classList.remove('shift-up');
   }
 });
