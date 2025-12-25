@@ -16,9 +16,75 @@
   <section class="map-section">
     <div id="map" class="map"></div>
 
+    <!-- Popup untuk informasi -->
     <div id="popup" class="ol-popup">
       <a href="#" id="popup-closer" class="ol-popup-closer"></a>
       <div id="popup-content"></div>
+    </div>
+
+    <!-- Tombol Legend (pojok kanan bawah) -->
+    <button id="legend-toggle" class="legend-toggle-btn" title="Toggle Legend">
+      <span>📍</span> Legend
+    </button>
+
+    <!-- Panel Legend -->
+    <div id="legend-panel" class="legend-panel">
+      <div class="legend-header">
+        <h6>📌 Legenda Peta</h6>
+        <button id="legend-close" class="legend-close-btn">✕</button>
+      </div>
+      <div class="legend-body">
+        <!-- Ikon Point -->
+        <div class="legend-section">
+          <h6 class="legend-subtitle">Titik Lokasi</h6>
+          <div class="legend-item">
+            <img src="icon/sumur.png" alt="Sumur" class="legend-icon">
+            <span>Sumur Air</span>
+          </div>
+          <div class="legend-item">
+            <img src="icon/air.png" alt="Pencemar" class="legend-icon">
+            <span>Sumber Pencemar</span>
+          </div>
+        </div>
+
+        <hr>
+
+        <!-- Buffer Zones -->
+        <div class="legend-section">
+          <h6 class="legend-subtitle">Zona Bahaya Pencemaran</h6>
+          <div class="legend-item">
+            <div class="legend-color" style="background: rgba(244, 67, 54, 0.35); border: 2px solid #f44336;"></div>
+            <span>Zona Tinggi (500m)</span>
+          </div>
+          <div class="legend-item">
+            <div class="legend-color" style="background: rgba(255, 152, 0, 0.3); border: 2px solid #FF9800;"></div>
+            <span>Zona Sedang (200m)</span>
+          </div>
+          <div class="legend-item">
+            <div class="legend-color" style="background: rgba(255, 193, 7, 0.25); border: 2px solid #FFC107;"></div>
+            <span>Zona Rendah (100m)</span>
+          </div>
+        </div>
+
+        <hr>
+
+        <!-- Kualitas Air -->
+        <div class="legend-section">
+          <h6 class="legend-subtitle">Kualitas Air</h6>
+          <div class="legend-item">
+            <span class="badge badge-baik">Baik</span>
+            <span class="legend-text">Air layak konsumsi</span>
+          </div>
+          <div class="legend-item">
+            <span class="badge badge-sedang">Sedang</span>
+            <span class="legend-text">Perlu perhatian</span>
+          </div>
+          <div class="legend-item">
+            <span class="badge badge-tinggi">Buruk</span>
+            <span class="legend-text">Tidak layak konsumsi</span>
+          </div>
+        </div>
+      </div>
     </div>
   </section>
 
