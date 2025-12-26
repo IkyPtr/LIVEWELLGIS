@@ -30,23 +30,24 @@ nav a {
   height: 100vh;
   width: 100%;
   position: relative;
-  padding-top: 56px; /* Sesuaikan dengan tinggi navbar */
+  padding-top: 56px;
 }
 
 #map {
   width: 100%;
   height: 100%;
 }
+
 /* ===========================================
-   POPUP STYLE
+   POPUP STYLE (DARK NAVY & BLACK THEME)
 =========================================== */
 .ol-popup {
   position: absolute;
-  background: #fff;
+  background: #0d0d0d; /* BACKGROUND HITAM */
   padding: 0;
   border-radius: 10px;
-  border: 1px solid #1b6f82;
-  box-shadow: 0 4px 18px rgba(0,0,0,0.15);
+  border: 1px solid #0a3d4a; /* BORDER NAVY GELAP */
+  box-shadow: 0 4px 18px rgba(0,0,0,0.6);
   min-width: 280px;
   max-width: 350px;
 }
@@ -154,7 +155,7 @@ nav a {
 
 /* Popup Header & Body */
 .popup-header {
-  background: linear-gradient(135deg, #2c9fbf, #1b6f82);
+  background: linear-gradient(135deg, #0a3d4a, #062832); /* NAVY GELAP */
   color: white;
   padding: 12px 15px;
   border-radius: 10px 10px 0 0;
@@ -172,7 +173,7 @@ nav a {
   max-height: 400px;
   overflow-y: auto;
   scrollbar-width: thin;
-  scrollbar-color: #2c9fbf #e0e0e0;
+  scrollbar-color: #0a3d4a #1a1a1a; /* SCROLLBAR NAVY GELAP */
 }
 
 .popup-body::-webkit-scrollbar {
@@ -180,29 +181,33 @@ nav a {
 }
 
 .popup-body::-webkit-scrollbar-track {
-  background: #f1f1f1;
+  background: #1a1a1a; /* TRACK GELAP */
   border-radius: 10px;
 }
 
 .popup-body::-webkit-scrollbar-thumb {
-  background: #2c9fbf;
+  background: #0a3d4a; /* NAVY GELAP */
   border-radius: 10px;
 }
 
 .popup-body::-webkit-scrollbar-thumb:hover {
-  background: #1b6f82;
+  background: #062832; /* LEBIH GELAP */
 }
 
 .popup-body p {
   margin: 8px 0;
   font-size: 14px;
   line-height: 1.5;
-  color: #333;
+  color: #e0e0e0; /* TEXT PUTIH */
+}
+
+.popup-body strong {
+  color: #ffffff; /* LABEL PUTIH TERANG */
 }
 
 .popup-body hr {
   border: none;
-  border-top: 1px solid #e0e0e0;
+  border-top: 1px solid #333; /* DIVIDER GELAP */
   margin: 12px 0;
 }
 
@@ -240,20 +245,8 @@ nav a {
   color: white;
 }
 
-/* NAVBAR (minimal) */
-nav {
-  background: #050b11;
-  padding: 10px 14px;
-}
-
-nav a {
-  color: #e5edf7;
-  text-decoration: none;
-  font-size: 0.9rem;
-}
-
 /* ===========================================
-   LEGEND STYLES
+   LEGEND STYLES (DARK NAVY & BLACK THEME)
 =========================================== */
 
 /* Tombol Toggle Legend (pojok KIRI bawah) */
@@ -261,7 +254,7 @@ nav a {
   position: absolute;
   bottom: 20px;
   left: 20px;
-  background: linear-gradient(135deg, #2c9fbf, #1b6f82);
+  background: linear-gradient(135deg, #0a3d4a, #062832); /* NAVY GELAP */
   color: white;
   border: none;
   border-radius: 8px;
@@ -269,7 +262,7 @@ nav a {
   font-size: 14px;
   font-weight: 600;
   cursor: pointer;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.4);
   display: flex;
   align-items: center;
   gap: 6px;
@@ -278,9 +271,9 @@ nav a {
 }
 
 .legend-toggle-btn:hover {
-  background: linear-gradient(135deg, #1b6f82, #0d4451);
+  background: linear-gradient(135deg, #062832, #041c24); /* LEBIH GELAP */
   transform: translateY(-2px);
-  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.3);
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.5);
 }
 
 .legend-toggle-btn span {
@@ -292,9 +285,9 @@ nav a {
   position: absolute;
   bottom: 130px;
   left: 20px;
-  background: white;
+  background: #0d0d0d; /* BACKGROUND HITAM */
   border-radius: 10px;
-  box-shadow: 0 4px 18px rgba(0, 0, 0, 0.2);
+  box-shadow: 0 4px 18px rgba(0, 0, 0, 0.6);
   width: 280px;
   max-height: 500px;
   overflow-y: auto;
@@ -320,7 +313,7 @@ nav a {
 
 /* Legend Header */
 .legend-header {
-  background: linear-gradient(135deg, #2c9fbf, #1b6f82);
+  background: linear-gradient(135deg, #0a3d4a, #062832); /* NAVY GELAP */
   color: white;
   padding: 12px 15px;
   border-radius: 10px 10px 0 0;
@@ -365,7 +358,7 @@ nav a {
 .legend-subtitle {
   font-size: 13px;
   font-weight: 600;
-  color: #333;
+  color: #e0e0e0; /* TEXT PUTIH */
   margin-bottom: 10px;
   text-transform: uppercase;
   letter-spacing: 0.5px;
@@ -377,6 +370,7 @@ nav a {
   gap: 10px;
   margin-bottom: 8px;
   font-size: 13px;
+  color: #d0d0d0; /* TEXT PUTIH */
 }
 
 /* Icon di legend */
@@ -397,45 +391,167 @@ nav a {
 /* Text di legend */
 .legend-text {
   font-size: 12px;
-  color: #666;
+  color: #b0b0b0; /* TEXT ABU-ABU TERANG */
 }
 
 .legend-body hr {
   border: none;
-  border-top: 1px solid #e0e0e0;
+  border-top: 1px solid #333; /* DIVIDER GELAP */
   margin: 12px 0;
 }
 
 /* ===========================================
-   CUSTOM ZOOM CONTROLS 
+   DASHBOARD STYLES (DARK NAVY & BLACK THEME)
+=========================================== */
+
+/* Tombol Toggle Dashboard (pojok KANAN bawah) */
+.dashboard-toggle-btn {
+  position: absolute;
+  bottom: 20px;
+  right: 20px;
+  background: linear-gradient(135deg, #0a3d4a, #062832); /* NAVY GELAP */
+  color: white;
+  border: none;
+  border-radius: 8px;
+  padding: 10px 16px;
+  font-size: 14px;
+  font-weight: 600;
+  cursor: pointer;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.4);
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  z-index: 999;
+  transition: all 0.3s ease;
+}
+
+.dashboard-toggle-btn:hover {
+  background: linear-gradient(135deg, #062832, #041c24); /* LEBIH GELAP */
+  transform: translateY(-2px);
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.5);
+}
+
+.dashboard-toggle-btn span {
+  font-size: 16px;
+}
+
+/* Panel Dashboard (slide dari kanan) */
+.dashboard-panel {
+  position: fixed;
+  top: 56px;
+  right: -400px;
+  bottom: 0;
+  background: #0d0d0d; /* BACKGROUND HITAM */
+  width: 380px;
+  box-shadow: -4px 0 18px rgba(0, 0, 0, 0.6);
+  z-index: 997;
+  overflow-y: auto;
+  transition: right 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.dashboard-panel.show {
+  right: 0;
+}
+
+/* Dashboard Header */
+.dashboard-header {
+  background: linear-gradient(135deg, #0a3d4a, #062832); /* NAVY GELAP */
+  color: white;
+  padding: 16px 20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  position: sticky;
+  top: 0;
+  z-index: 10;
+}
+
+.dashboard-header h6 {
+  margin: 0;
+  font-size: 16px;
+  font-weight: 600;
+}
+
+.dashboard-close-btn {
+  background: none;
+  border: none;
+  color: white;
+  font-size: 20px;
+  cursor: pointer;
+  padding: 0;
+  width: 28px;
+  height: 28px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: opacity 0.2s;
+}
+
+.dashboard-close-btn:hover {
+  opacity: 0.7;
+}
+
+/* Dashboard Body */
+.dashboard-body {
+  padding: 20px;
+  color: #e0e0e0; /* TEXT PUTIH */
+}
+
+.dashboard-section {
+  margin-bottom: 24px;
+}
+
+.dashboard-subtitle {
+  font-size: 14px;
+  font-weight: 600;
+  color: #e0e0e0; /* TEXT PUTIH */
+  margin-bottom: 12px;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+/* Scrollbar untuk dashboard */
+.dashboard-panel::-webkit-scrollbar {
+  width: 8px;
+}
+
+.dashboard-panel::-webkit-scrollbar-track {
+  background: #1a1a1a; /* TRACK GELAP */
+}
+
+.dashboard-panel::-webkit-scrollbar-thumb {
+  background: #0a3d4a; /* NAVY GELAP */
+  border-radius: 4px;
+}
+
+.dashboard-panel::-webkit-scrollbar-thumb:hover {
+  background: #062832; /* LEBIH GELAP */
+}
+
+/* ===========================================
+   CUSTOM ZOOM CONTROLS (DARK NAVY THEME)
 =========================================== */
 .zoom-controls {
   position: absolute;
-  bottom: 20px; /* Posisi tetap di bawah */
-  left: 140px; /* Di samping kanan legend button */
+  bottom: 20px;
+  left: 140px;
   display: flex;
-  flex-direction: row; /* horizontal */
+  flex-direction: row;
   gap: 8px;
   z-index: 999;
-  /* HAPUS transition agar tidak ada animasi gerak */
 }
-
-/* HAPUS atau COMMENT class shift-up ini */
-/* .zoom-controls.shift-up {
-  bottom: 130px;
-} */
 
 .zoom-btn {
   width: 40px;
   height: 40px;
-  background: linear-gradient(135deg, #2c9fbf, #1b6f82);
+  background: linear-gradient(135deg, #0a3d4a, #062832); /* NAVY GELAP */
   color: white;
   border: none;
   border-radius: 8px;
   font-size: 24px;
   font-weight: 600;
   cursor: pointer;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.4);
   display: flex;
   align-items: center;
   justify-content: center;
@@ -444,33 +560,22 @@ nav a {
 }
 
 .zoom-btn:hover {
-  background: linear-gradient(135deg, #1b6f82, #0d4451);
+  background: linear-gradient(135deg, #062832, #041c24); /* LEBIH GELAP */
   transform: translateY(-2px);
-  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.3);
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.5);
 }
 
 .zoom-btn:active {
   transform: translateY(0);
-  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
 }
 
-/* Responsive */
-@media (max-width: 768px) {
-  .zoom-controls {
-    bottom: 20px; /* Tetap di posisi bawah */
-    left: 120px;
-  }
-
-  .zoom-btn {
-    width: 36px;
-    height: 36px;
-    font-size: 20px;
-  }
-}
-/* Responsive */
+/* ===========================================
+   RESPONSIVE
+=========================================== */
 @media (max-width: 768px) {
   .legend-toggle-btn {
-    bottom: 70px;
+    bottom: 20px;
     left: 15px;
     padding: 8px 12px;
     font-size: 12px;
@@ -478,17 +583,13 @@ nav a {
 
   .legend-panel {
     width: 240px;
-    bottom: 120px;
+    bottom: 70px;
     left: 15px;
   }
 
   .zoom-controls {
-    bottom: 70px;
+    bottom: 20px;
     left: 120px;
-  }
-
-  .zoom-controls.shift-up {
-    bottom: 120px;
   }
 
   .zoom-btn {
@@ -496,38 +597,31 @@ nav a {
     height: 36px;
     font-size: 20px;
   }
-}
-/* Responsive */
-@media (max-width: 768px) {
-  .legend-toggle-btn {
-    bottom: 70px;
-    left: 15px;
+
+  .dashboard-toggle-btn {
+    bottom: 20px;
+    right: 15px;
     padding: 8px 12px;
     font-size: 12px;
   }
 
-  .legend-panel {
-    width: 240px;
-    bottom: 120px;
-    left: 15px;
+  .dashboard-panel {
+    width: 100%;
+    right: -100%;
   }
 
-  .zoom-controls {
-    bottom: 70px;
-    left: 120px;
-  }
-
-  .zoom-controls.shift-up {
-    bottom: 120px;
-  }
-
-  .zoom-btn {
-    width: 36px;
-    height: 36px;
-    font-size: 20px;
+  .dashboard-panel.show {
+    right: 0;
   }
 }
-
+.legend-icon {
+  width: 20px;
+  height: 20px;
+  object-fit: contain;
+  background: #ffffff; /* Putih solid */
+  border-radius: 50%;
+  padding: 4px;
+}
 /* ===========================================
    HIDE OPENLAYERS CONTROLS
 =========================================== */
