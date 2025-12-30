@@ -38,7 +38,9 @@ function createIconLayer(url, iconSrc, layerType) {
       image: new Icon({
         src: iconSrc,
         anchor: [0.5, 1],
-        scale: 0.10
+        scale: 0.06, 
+        anchorXUnits: 'fraction',
+        anchorYUnits: 'fraction'
       })
     }),
     properties: { layerType }
@@ -337,7 +339,7 @@ dashboardCloseBtn.addEventListener('click', () => {
 // Global variables untuk menyimpan data
 let waterData = null;
 let toxicData = null;
-let chartInstances = {}; // Store chart instances untuk cleanup
+let chartInstances = {}; 
 
 // Fetch semua data
 async function loadAllData() {
@@ -783,7 +785,9 @@ function filterSumurByQuality(quality) {
     image: new Icon({
       src: 'icon/sumur.png',
       anchor: [0.5, 1],
-      scale: 0.10
+      scale: 0.06, // Reduced from 0.10 to 0.06
+      anchorXUnits: 'fraction',
+      anchorYUnits: 'fraction'
     })
   }));
 }
@@ -810,7 +814,9 @@ function resetAllLayers() {
       image: new Icon({
         src: 'icon/sumur.png',
         anchor: [0.5, 1],
-        scale: 0.10
+        scale: 0.06, // Reduced from 0.10 to 0.06
+        anchorXUnits: 'fraction',
+        anchorYUnits: 'fraction'
       })
     }));
   }
@@ -827,6 +833,100 @@ function resetAllLayers() {
   if (filterInfo) {
     filterInfo.style.display = 'none';
   }
+  
+  // Remove radar effect
+  removeRadarEffect();
+}
+
+// Function to add radar effect to map
+function addRadarEffect(filterType) {
+  const mapElement = document.getElementById('map');
+  
+  // Add radar-active class to map
+  mapElement.classList.add('radar-active');
+  
+  // Add radar overlays for visible features
+  createRadarOverlays(filterType);
+  
+  // Update radar overlays on map move
+  map.on('moveend', updateRadarOverlays);
+}
+
+// Function to remove radar effect
+function removeRadarEffect() {
+  const mapElement = document.getElementById('map');
+  mapElement.classList.remove('radar-active');
+  
+  // Remove all radar overlays
+  removeRadarOverlays();
+  
+  // Remove moveend listener
+  map.un('moveend', updateRadarOverlays);
+}
+
+// Store radar overlays
+let radarOverlays = [];
+
+// Create radar overlay elements
+function createRadarOverlays(filterType) {
+  // Remove existing overlays first
+  removeRadarOverlays();
+  
+  // Get visible layer
+  let targetLayer = null;
+  let radarColor = 'cyan';
+  
+  if (filterType === 'sumur' || filterType === 'baik' || filterType === 'buruk') {
+    targetLayer = sumurLayer;
+    radarColor = filterType === 'baik' ? 'green' : filterType === 'buruk' ? 'red' : 'cyan';
+  } else if (filterType === 'pencemar') {
+    targetLayer = pencemarLayer;
+    radarColor = 'warning';
+  }
+  
+  if (!targetLayer) return;
+  
+  // Get all features from the layer
+  const source = targetLayer.getSource();
+  const features = source.getFeatures();
+  
+  features.forEach(feature => {
+    const geometry = feature.getGeometry();
+    const coords = geometry.getCoordinates();
+    
+    // Create overlay div for radar effect
+    const radarDiv = document.createElement('div');
+    radarDiv.className = `radar-marker radar-${radarColor}`;
+    radarDiv.innerHTML = '<div class="radar-ring-3"></div>';
+    
+    // Create OpenLayers Overlay
+    const overlay = new Overlay({
+      element: radarDiv,
+      positioning: 'center-center',
+      stopEvent: false
+    });
+    
+    overlay.setPosition(coords);
+    map.addOverlay(overlay);
+    
+    radarOverlays.push(overlay);
+  });
+  
+  console.log(`✅ Created ${radarOverlays.length} radar overlays (${radarColor})`);
+}
+
+// Update radar overlays (on map move)
+function updateRadarOverlays() {
+  // Overlays automatically update position with map
+  // This function can be used for additional updates if needed
+}
+
+// Remove all radar overlays
+function removeRadarOverlays() {
+  radarOverlays.forEach(overlay => {
+    map.removeOverlay(overlay);
+  });
+  radarOverlays = [];
 }
 
 // Function to handle filter actions
@@ -923,6 +1023,11 @@ function applyFilter(filterType, cardElement) {
     filterText.textContent = infoText;
     filterInfo.style.display = 'flex';
   }
+  
+  // Add radar effect
+  setTimeout(() => {
+    addRadarEffect(filterType);
+  }, 300); // Delay untuk smooth transition
 }
 
 // Attach event listeners to KPI cards (will be called after dashboard is created)
