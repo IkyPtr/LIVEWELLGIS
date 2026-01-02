@@ -3,27 +3,39 @@
 
 <head>
   <meta charset="UTF-8">
-  <title>Tabel Data Pencemaran</title>
-  <link rel="stylesheet" href="stylePencemaran.css">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Dataset Sumur – LiveForWell</title>
+
+  <!-- Bootstrap -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/css/bootstrap.min.css" rel="stylesheet">
+
+  <!-- Custom CSS -->
+  <link rel="stylesheet" href="styleSumur.css" />
 </head>
+
 
 <body>
 
-  <header class="top-bar">
-    <div class="top-left">
-      <span class="logo-dot"></span>
-      <span class="brand">LiveForWell</span>
+  <nav class="navbar navbar-expand-lg navbar-dark" style="background:#02060c;">
+    <div class="container-fluid px-4">
+      <a class="navbar-brand fw-bold" href="../../index.html">LiveForWell</a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#mainNavbar">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="mainNavbar">
+        <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
+          <li class="nav-item"><a class="nav-link" href="../../index.html">BERANDA</a></li>
+          <li class="nav-item"><a class="nav-link" href="../map.html">PETA INTERAKTIF</a></li>
+          <li class="nav-item"><a class="nav-link" href="dataAir.html">DATASET SUMUR</a></li>
+          <li class="nav-item"><a class="nav-link active" href="dataPencemaran.html">DATASET PENCEMARAN</a></li>
+        </ul>
+      </div>
     </div>
-    <nav class="top-nav">
-      <a href="/index.html">Beranda</a>
-      <a href="/map/map.html">Peta Interaktif</a>
-      <a href="/map/tabel/dataAir.html">Dataset Sumur</a>
-      <a href="/map/tabel/dataPencemaran.html">Dataset Pencemaran</a>
-    </nav>
-  </header>
+  </nav>
 
 
-  <div class="container">
+
+  <div class="container mt-5">
     <h3>Tabel Data Pencemaran</h3>
 
     <div class="table-card">
@@ -53,6 +65,8 @@
 
 
   <script src="mainPencemaran.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/js/bootstrap.bundle.min.js"></script>
+
 </body>
 
 </html>

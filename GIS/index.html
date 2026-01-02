@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -11,34 +12,39 @@
 </head>
 
 <body id="top">
-  <!-- Navbar -->
+  <!-- NAVBAR UTAMA -->
   <nav class="navbar navbar-expand-lg navbar-dark" style="background:#02060c;">
     <div class="container-fluid px-4">
-      <a class="navbar-brand fw-bold" href="index.html">LiveForWell</a>
+      <!-- Logo / Brand -->
+      <a class="navbar-brand fw-bold" href="../../index.html">LiveForWell</a>
 
-      <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
-              data-bs-target="#mainNavbar" aria-controls="mainNavbar"
-              aria-expanded="false" aria-label="Toggle navigation">
+      <!-- Hamburger menu (mobile) -->
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#mainNavbar"
+        aria-controls="mainNavbar" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
       </button>
 
+      <!-- Menu -->
       <div class="collapse navbar-collapse" id="mainNavbar">
         <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
           <li class="nav-item">
-            <a class="nav-link active" aria-current="page" href="#top">BERANDA</a>
+            <a class="nav-link active" href="index.html">BERANDA</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="/map/tabel/dataAir.html">DATA AIR</a>
-          </li><li class="nav-item">
-            <a class="nav-link" href="/map/tabel/dataPencemaran.html">DATA TOXIC</a>
+            <a class="nav-link" href="map/map.html">PETA INTERAKTIF</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="./map/map.html">PETA INTERAKTIF</a>
+            <a class="nav-link" href="map/tabel/dataAir.html">DATASET SUMUR</a>
           </li>
+          <li class="nav-item">
+            <a class="nav-link" href="map/tabel/dataPencemaran.html">DATASET PENCEMARAN</a>
+          </li>
+
         </ul>
       </div>
     </div>
   </nav>
+
 
   <div class="page-wrapper">
 
@@ -54,7 +60,7 @@
       <div class="hero-overlay"></div>
 
       <div class="hero-inner">
-        
+
         <!-- LEFT -->
         <div class="hero-left">
           <div class="hero-badge">
@@ -125,12 +131,15 @@
 
             <p class="mb-2">
               LiveForWell dibangun dari penelitian “Sistem Informasi Geografis Pemetaan Kualitas Air Sumur Dangkal
-              untuk Evaluasi Keberlanjutan Sumber Air Bersih” yang berfokus pada sumur rumah tangga di wilayah Rumbai dan sekitarnya.
+              untuk Evaluasi Keberlanjutan Sumber Air Bersih” yang berfokus pada sumur rumah tangga di wilayah Rumbai
+              dan sekitarnya.
             </p>
 
             <p class="mb-3">
-              Platform ini mengubah data survei lapangan (longitude, latitude, pH, bau, rasa, warna air, dan jenis sumber pencemar)
-              menjadi peta interaktif sehingga area aman, sedang, dan rentan pencemaran dapat terlihat jelas secara spasial.
+              Platform ini mengubah data survei lapangan (longitude, latitude, pH, bau, rasa, warna air, dan jenis
+              sumber pencemar)
+              menjadi peta interaktif sehingga area aman, sedang, dan rentan pencemaran dapat terlihat jelas secara
+              spasial.
             </p>
 
             <div class="row g-3">
@@ -147,7 +156,8 @@
 
               <div class="col-6">
                 <div class="p-3 h-100" style="border-radius:1rem; background:#071624;">
-                  <h6 class="text-uppercase mb-1" style="letter-spacing:.12em; font-size:.78rem;">Manfaat bagi warga</h6>
+                  <h6 class="text-uppercase mb-1" style="letter-spacing:.12em; font-size:.78rem;">Manfaat bagi warga
+                  </h6>
                   <ul class="mb-0" style="padding-left:1.1rem; font-size:.86rem;">
                     <li>Informasi sumur layak & tidak layak.</li>
                     <li>Dukungan keputusan perbaikan sanitasi.</li>
@@ -174,7 +184,8 @@
                 <!-- pH -->
                 <div class="col-sm-4">
                   <div class="p-3 h-100" style="border-radius:1rem; background:#050f1c;">
-                    <div style="font-size:.8rem; text-transform:uppercase; letter-spacing:.14em; color:#8fd4ff;">pH</div>
+                    <div style="font-size:.8rem; text-transform:uppercase; letter-spacing:.14em; color:#8fd4ff;">pH
+                    </div>
                     <div style="font-size:1.6rem; font-weight:700;">6 – 9</div>
                     <p class="mb-0" style="font-size:.8rem;">
                       Rentang pH umum untuk air bersih layak konsumsi.
@@ -215,7 +226,7 @@
                   60+ titik sumber pencemar
                 </span>
                 <a href="./map/map.html" class="badge rounded-pill text-decoration-none"
-                   style="background:linear-gradient(120deg,#2c9fbf,#f4b000); color:#051018; font-size:.78rem;">
+                  style="background:linear-gradient(120deg,#2c9fbf,#f4b000); color:#051018; font-size:.78rem;">
                   Lihat distribusi di peta →
                 </a>
               </div>
@@ -305,4 +316,5 @@
 
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/js/bootstrap.bundle.min.js"></script>
 </body>
+
 </html>

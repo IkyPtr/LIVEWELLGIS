@@ -13,31 +13,32 @@
 </head>
 
 <body>
-  <!-- Navbar dengan menu lengkap -->
-  <nav class="navbar navbar-expand-lg navbar-dark" style="background:#050b11;">
-    <div class="container-fluid px-3">
-      <!-- Brand/Logo -->
-      <a class="navbar-brand" href="../index.html" style="color:#e5edf7; font-weight: 600;">
-        LiveForWell
-      </a>
+  <!-- NAVBAR UTAMA -->
+  <nav class="navbar navbar-expand-lg navbar-dark" style="background:#02060c;">
+    <div class="container-fluid px-4">
+      <!-- Logo / Brand -->
+      <a class="navbar-brand fw-bold" href="../../index.html">LiveForWell</a>
 
-      <!-- Hamburger Menu (Mobile) -->
-      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#mapNavbar"
-        aria-controls="mapNavbar" aria-expanded="false" aria-label="Toggle navigation">
+      <!-- Hamburger menu (mobile) -->
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#mainNavbar"
+        aria-controls="mainNavbar" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
       </button>
 
-      <!-- Menu Items -->
-      <div class="collapse navbar-collapse" id="mapNavbar">
+      <!-- Menu -->
+      <div class="collapse navbar-collapse" id="mainNavbar">
         <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
           <li class="nav-item">
-            <a class="nav-link" href="../index.html">← Beranda</a>
+            <a class="nav-link" href="../index.html">BERANDA</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="tabel/dataAir.html">Data Sumur</a>
+            <a class="nav-link active" href="map.html">PETA INTERAKTIF</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="tabel/dataPencemaran.html">Data Pencemaran</a>
+            <a class="nav-link" href="tabel/dataAir.html">DATASET SUMUR</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="tabel/dataPencemaran.html">DATASET PENCEMARAN</a>
           </li>
         </ul>
       </div>
@@ -148,4 +149,5 @@
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/js/bootstrap.bundle.min.js"></script>
   <script type="module" src="./main.js"></script>
 </body>
+
 </html>

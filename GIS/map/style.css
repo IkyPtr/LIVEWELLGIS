@@ -1,11 +1,20 @@
 /* ===========================================
    RESET & GLOBAL
 =========================================== */
+:root {
+  --primary: #2c9fbf;
+  --primary-dark: #1b6f82;
+  --accent: #f4b000;
+  --bg-dark: #050b11;
+  --text-light: #e0edf5;
+}
+
 html,
 body {
   margin: 0;
   height: 100%;
-  background: #02060c;
+  background: var(--bg-dark);
+  color: var(--text-light);
   font-family: system-ui, sans-serif;
 }
 
@@ -44,11 +53,11 @@ nav a {
 =========================================== */
 .ol-popup {
   position: absolute;
-  background: #0d0d0d;
+  background: rgba(7, 22, 34, 0.85);
   /* BACKGROUND HITAM */
   padding: 0;
   border-radius: 10px;
-  border: 1px solid #0a3d4a;
+  border: 1px solid var(--primary);
   /* BORDER NAVY GELAP */
   box-shadow: 0 4px 18px rgba(0, 0, 0, 0.6);
   min-width: 280px;
