@@ -25,6 +25,66 @@ const map = new Map({
   })
 });
 
+const kecamatanConfigs = [
+  {
+    name: 'Rumbai',
+    url: 'data/rumbai.geojson',
+    stroke: '#2196f3',
+    fill: 'rgba(33, 150, 243, 0.15)'
+  },
+  {
+    name: 'Rumbai Barat',
+    url: 'data/rumbaiBarat.geojson',
+    stroke: '#4caf50',
+    fill: 'rgba(76, 175, 80, 0.15)'
+  },
+  {
+    name: 'Rumbai Timur',
+    url: 'data/rumbaiTimur.geojson',
+    stroke: '#ff9800',
+    fill: 'rgba(255, 152, 0, 0.15)'
+  }
+];
+
+const kecamatanLayers = [];
+let hoveredKecamatan = null;
+
+// Style untuk kecamatan normal
+function getKecamatanStyle(cfg, isHovered = false) {
+  return new Style({
+    fill: new Fill({
+      color: isHovered ? cfg.fill.replace('0.15', '0.35') : cfg.fill
+    }),
+    stroke: new Stroke({
+      color: cfg.stroke,
+      width: isHovered ? 3 : 2,
+      lineDash: isHovered ? null : [5, 5]
+    })
+  });
+}
+
+kecamatanConfigs.forEach(cfg => {
+  const layer = new VectorLayer({
+    source: new VectorSource({
+      url: cfg.url,
+      format: new GeoJSON({
+        dataProjection: 'EPSG:4326',
+        featureProjection: 'EPSG:3857'
+      })
+    }),
+    style: getKecamatanStyle(cfg, false),
+    properties: {
+      layerType: 'kecamatan',
+      nama: cfg.name,
+      config: cfg
+    }
+  });
+
+  map.addLayer(layer);
+  kecamatanLayers.push(layer);
+});
+
+
 // ===============================
 // Utility function: create icon layer
 // ===============================
@@ -248,7 +308,22 @@ map.on('singleclick', (evt) => {
     const layerType = layer.get('layerType');
     
     let html = '';
-    
+    if (layerType === 'kecamatan') {
+  const nama =
+    props.name ||
+    props['name:id'] ||
+    layer.get('nama') ||
+    'Kecamatan';
+
+  html = `
+    <div class="popup-header">
+      <h5>📍 ${nama}</h5>
+    </div>
+    <div class="popup-body">
+      <p>Wilayah administrasi</p>
+    </div>
+  `;
+}
     if (layerType === 'sumur') {
       html = formatDataAir(props);
     } else if (layerType === 'pencemar') {
@@ -271,6 +346,8 @@ map.on('singleclick', (evt) => {
     }
   }
 });
+
+
 
 // ===============================
 // Legend & Zoom Controls
@@ -490,6 +567,8 @@ function createDashboard() {
         <button id="reset-filter-btn" class="reset-filter-btn">Reset Filter</button>
       </div>
     </div>
+
+    
     
     <!-- Kualitas per Kecamatan -->
     <div class="dashboard-section">
@@ -498,6 +577,7 @@ function createDashboard() {
         <canvas id="chartKecamatan"></canvas>
       </div>
     </div>
+    
     
     <!-- Kategori pH & Warna Air -->
     <div class="dashboard-section">

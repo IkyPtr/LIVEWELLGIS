@@ -476,10 +476,10 @@ nav a {
   top: 56px;
   right: -400px;
   bottom: 0;
-  background: #0d0d0d;
+  background-color: rgba(2, 6, 12, 0.9);
   /* BACKGROUND HITAM */
   width: 380px;
-  box-shadow: -4px 0 18px rgba(0, 0, 0, 0.6);
+  box-shadow: -2px 0 10px rgba(0,0,0,0.5);
   z-index: 997;
   overflow-y: auto;
   transition: right 0.4s cubic-bezier(0.4, 0, 0.2, 1);
